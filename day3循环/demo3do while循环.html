@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>do while循环</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			do while:直到型循环(先斩后奏，先执行一次)
+			语法：
+			表达式1:
+			do{
+				语句组;
+				表达式3;
+			}while(表达式2);
+		*/
+		/*
+			// 用do while循环，完成输出十个helloworld, 循环思想一样，变了一种写法而已
+			var i = 1;
+			do{
+				document.write("hello world</br>");
+				i++;
+			}while(i<=10);
+		*/
+		/*
+			求1+2+3+......+100和
+			var i = 1, sum = 0;
+			do{
+				sum += i;
+				i++;
+			}while(i<=100);
+			alert(sum);
+		*/
+		/*
+			输出m至n的自然数中的奇数和与偶数和，并统计偶数和奇数的个数分别是多少
+			var m = parseInt(prompt("请输入一个整数"));
+			var n = parseInt(prompt("请输入一个整数"));
+			var even_sum = 0, odd_sum = 0, even_count = 0, odd_count = 0;
+			if(m>n) {
+				var t = m;
+				m = n;
+				n = m;
+			}
+			var i = m;
+			do{
+				if(i%2 == 0) {
+					even_sum += i;
+					even_count++;
+				} else {
+					odd_sum += i;
+					odd_count++;
+				}
+				i++
+			}while(i<=n);
+			document.write("偶数和："+even_sum+"<br/>偶数个数："+even_count+"<br/>奇数和:"+odd_sum+"<br/>+奇数个数"+odd_count);
+		*/
+
+		/*
+			while和do while的区别
+			1、如果循环条件第一次为真时，没有区别
+			2、如果循环条件第一次为假时，do while循环至少要执行一次循环体，而while循环一次都不执行
+			3、while是先判断条件，后执行语句，do while是先执行语句，后判断条件
+			var i = 3;
+			while(i == 4) {
+				i++;
+			}
+			alert(i);//i=3
+			
+			var i = 3;
+			do{
+				i++;
+			}while(i == 4);
+			alert(i);//i=5
+			*/
+	</script>
+</body>
+</html>

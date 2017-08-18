@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM常用属性</title>
+		<style>
+			.class1{
+				background: red;
+			}
+			.class2{
+				border: 2px black solid;
+			}
+			.class3{
+				color: black;
+			}
+		</style>
+		<script>
+			
+			//DOM Document Object Model: 文档对象模型
+			//HTML:页面结构 CSS:页面样式 JavaScript:页面行为
+			//DOM 可以让 JavaScript和HTML,CSS交互
+			//DOM 在前端开发中充当一个[接口]的作用
+			
+			//DOM的模型结构相当于是一个树状结构
+			
+			//<div title="标题">测试div</div>
+			
+			//DOM中 节点可以分为以下三类
+			//元素节点: <div></div> //在DOM 标签也叫作元素
+			//属性节点: title="标题"
+			//文本节点: 测试div
+			
+			
+			/**
+			 元素节点: <div></div> <ul></ul> <li></li>
+			 属性节点: id="box_div" title="属性节点" style="color:red" class="pox"
+			 文本节点: 文本节点, 1, 2, 3
+			 * */
+			
+			
+			/*
+			 * 对于获取不到节点对象, 有两种解决方法
+			 * 1, 将整个JS代码, 移动到文本的最下方
+			 * 2, 可以等加载完HTMl页面后再执行JS代码, 使用window.onload
+			 */
+			window.onload = function() {
+							
+				//通过id属性 获取节点对象
+				var box = document.getElementById("box_id");
+				console.log(box.style.fontSize)
+				// console.log(box); //如果页面HTML还没有加载好, 得到的是null
+				
+				//tagName :标签名  
+				// console.log(box.tagName);
+				
+				//innerHTML :标签内容
+				// console.log(box.innerHTML);
+				//可以使用innerHTML属性对节点的内容进行修改 （可以识别内容中的标签；如下句子“哈哈”为粗体。）
+				box.innerHTML = "我是被赋值的字符串<strong>哈哈</strong>";
+				
+				//id: 只获取, 一般不要修改id
+				// box.id = "box_div2"; 
+				// console.log(box.id);
+				
+				//title:
+				// box.title = "标题";
+				// console.log(box.title);
+				
+				//style:
+				// console.log(box.style); //返回了一个对象
+				// box.style.color = "blue"; //把样式中的颜色改成了蓝色
+				// console.log(box.style.color);
+				
+				//className:
+				// box.className = "class3"; //修改class="ssss"
+				// box.className = box.className+" class2"; //修改class="ssss"
+				// 
+				// console.log(box.className); //获取class属性的值, 注意不能使用class
+
+			}
+
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="box_id" title="属性节点" class="class1" style="font-size: 12px;">文本节点</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		
+	</body>
+</html>
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>childNodes</title>
+		
+		<script>
+			//DOM节点: 节点属性, 只要节点都有下面这三个属性
+			//nodeName nodeType nodeValue
+			
+			window.onload = function() {
+				
+				
+				var box = document.getElementById("box"); //box节点
+				// console.log(box.nodeName); //节点名称
+				// console.log(box.nodeType); //节点类型, 元素节点nodeType是1，文本节点nodeType是3
+				// console.log(box.nodeValue); //节点值,元素节点没有value,文本节点的值取出,元素节点用innerHTML
+				// console.log(box.innerHTML);
+				
+				//childNodes: 可以获取一个元素节点所有子节点, 包括元素节点,文本节点,只访问儿子辈的
+				//在低版本IE中，会自动忽略掉空白的文本节点，其他浏览器不会忽略
+				// var box = document.getElementById("box");
+				console.log(box.childNodes); //[object NodeList]
+				// console.log(box.childNodes.length); 
+
+				// for(var i=0; i<box.childNodes.length; i++) {
+				// 	console.log(box.childNodes[i].nodeName);
+				// 	//匹配空白节点可以使用正则
+				// 	console.log(/^\s+$/.test(box.childNodes[i].nodeValue))
+				// }
+				
+				
+				//childNodes: 只能取到该元素节点内的子元素节点和子文本节点
+				
+				//需要对获取到的子节点进行判断, 因为元素节点没有value
+				for (var i=0; i<box.childNodes.length; i++) {
+					if(box.childNodes[i].nodeType == 1){
+						console.log("元素节点:" + box.childNodes[i].nodeName);
+					} else if(box.childNodes[i].nodeType == 3){
+						console.log("文本节点:" + box.childNodes[i].nodeName);
+					}
+				}
+				
+
+				//得到两个节点:
+				//测试Div 文本节点
+				//EM  元素节点
+				
+				//nodeValue文本和属性节点 和 innerHTML元素节点的区别:
+				
+				//1, 取值的时候有区别:
+				//   innerHTML 是将标签也输出
+				//   nodeValue 是将文本节点的值取出
+				console.log(box.childNodes[0].nodeValue);
+				console.log(box.innerHTML);
+				
+
+				//2, 赋值的时候有区别:
+				  // nodeValue: 直接将字符串赋值
+				  // innerHTML: 会解析内部的HTML标签
+				  box.childNodes[0].nodeValue = "<strong>我是被赋值字符串</strong>";
+				  box.childNodes[1].innerHTML = "<strong>我是被赋值字符串</strong>";
+				  // console.log(box.childNodes[0].nodeValue);
+				  // console.log(box.childNodes[1].innerHTML);
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		
+		<div id = "box">测试Div
+			<em>这个部分是斜体<span>aaa</span></em>
+			<div>aaa</div>
+		</div>
+
+		
+	</body>
+</html>
+
+
+
+
+
+

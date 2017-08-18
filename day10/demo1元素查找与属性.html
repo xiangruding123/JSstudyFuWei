@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>元素查找与属性</title>
+		
+		<script>
+			
+			window.onload = function() {
+				// attributes
+				// 变量名加_
+				// style currentStyle getComputeStyle
+
+				//获取box节点
+				var box = document.getElementById("box");
+				// console.log(box.childNodes.length);
+			
+
+				//取第一个子节点
+				// console.log(box.childNodes[0].nodeValue);
+				// console.log(box.firstChild.nodeValue);
+			
+				//取最后一个子节点
+				// console.log(box.childNodes[box.childNodes.length-1].nodeValue);
+				// console.log(box.lastChild.nodeValue);
+				
+
+
+
+				//ownerDocument： 返回当前节点的文档对象根节点,相当于document
+				
+				// console.log(box.ownerDocument); //[object HTMLDocument]
+				// console.log(document); //
+				// console.log(box.ownerDocument == document); //true
+				// console.log(box.ownerDocument === document); //true
+				
+
+
+
+
+				//父节点
+				// console.log(box.parentNode);  //[object HTMLBodyDocument] body节点
+				
+				//同级上一个节点和下一个节点
+				// console.log(box.firstChild.nextSibling.nodeName); //获取第一个节点的下一个节点
+				// console.log(box.lastChild.previousSibling.nodeName); //获取最后一个节点的上一个节点
+				
+
+
+				//attributes: 属性节点
+				
+				//id="box" title="标题" class="pox" style="color: red;"
+				
+				// console.log(box.attributes); //[object NamedNodeMap] 节点地图集合
+				// console.log(box.attributes.length); //取到所有属性长度
+				// console.log(box.attributes[0]); //属性节点
+				// console.log(box.attributes[1]); 
+				// console.log(box.attributes[2]); 
+				// console.log(box.attributes[3]); 
+				// console.log(box.attributes[4]); 
+				 
+
+				// console.log(box.attributes[0].nodeName); //属性名 id
+				// console.log(box.attributes[0].nodeType); //节点类型 2
+				// console.log(box.attributes[3].nodeValue); //属性值 box
+				
+
+
+				console.log(box.attributes["id"]); //通过属性名获取属性节点
+
+				console.log(box.attributes["id"].nodeValue);   //通过属性名获取属性节点
+				console.log(box.attributes.getNamedItem("id").nodeValue); //通过属性名获取属性节点
+				
+				console.log(box.attributes[1].nodeName);
+				console.log(box.attributes[1].nodeValue);
+
+
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="box" title="标题" class="pox" name="xoxi" style="color: red;">
+			为div的第一个子节点
+			<em>aaa</em>
+			测试DIV1
+			<em>我是斜体</em>
+			<img src="#">
+			测试DIV2
+		</div>
+		
+	</body>
+</html>

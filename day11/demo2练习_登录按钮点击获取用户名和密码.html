@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>练习_登录按钮点击获取用户名和密码</title>
+		
+		<script>
+		
+			window.onload = function() {
+				//getElementsByClassName()通过类名查找，低版本浏览器不兼容
+				var oInput = document.getElementsByClassName("btn")[0];
+				
+				oInput.onclick = function(){
+					var username = document.getElementsByTagName("input")[0];
+					var pwd = document.getElementsByTagName("input")[1];
+					alert("用户名:" + username.value + ", 密码:" + pwd.value);
+				}
+				
+			}
+		
+		</script>
+		
+	</head>
+	<body>
+		<input type="text" placeholder="用户名" />
+		<input type="password" placeholder="密码" />
+		<input type="button" class="btn" value="登录" />
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>innerHTML、innerText和outerHTML</title>
+		<script>
+			window.onload = function() {
+
+				// outerHTML/innerText，非 W3C DOM 规范
+                
+
+				var oDiv = document.getElementById("test");
+				 console.log(oDiv.innerHTML);
+
+                console.log(oDiv.innerText);//只拿文本，标签被忽视
+				 console.log(oDiv.outerHTML);  //outerText 在firefox里是undefined 所以尽量少用
+                 console.log(getInner(oDiv));   //参考下边的getInner()函数；
+			}
+
+
+			function getInner(obj){
+                if(typeof obj.innerText =="undefined"){
+                    return obj.textContent;
+                }else{
+                    return obj.innerText;//为了防止火狐老版本不支持innerText，所以做一下兼容
+                }
+            }
+      
+
+		</script>
+	</head>
+	<body>
+		<div id="test"> 
+   			<span style="color:red">test1</span> test2 
+		</div>
+	</body>
+</html>

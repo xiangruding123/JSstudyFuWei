@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script>
+		
+			window.onload=function(){
+				
+				var oUl=document.getElementById("ul");
+				
+				
+				for(var i=0;i<6;i++){
+					var good=getCookie("好吃的"+i);
+					if(good){
+						var oLi=document.createElement("li");
+						
+						oLi.innerHTML="<span>好吃的"+i+"</span> &nbsp; <span>"+good+"</span>";
+						
+						oUl.appendChild(oLi);
+					}
+					
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<ul id="ul">
+			
+		</ul>
+	</body>
+</html>

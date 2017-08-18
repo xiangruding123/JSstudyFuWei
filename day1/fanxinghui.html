@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+//			document.write("<p>"+"我是内容"+"</p>");
+//			alert("hello\n world")
+//			console.log("真的有吗");
+/*			var oNull = null;
+			alert(typeof oNull);*/
+			/*var bBool = true;
+			alert(typeof bBool);*/
+//			var num = 1;
+//			alert(num++)
+			/*var num = "wdwdw";
+			alert(typeof num);*/
+			/*alert( null == 0);
+			alert( undefined == 0)*/
+			
+			var pay = 10;
+			for (var i=0;i<50;i++) {
+				pay = pay*(1+0.05)
+			}
+			document.write(pay+" K<br/><br/>");
+			var hour,day;
+			day = 89/24;
+			hour = 89%24;
+			
+			document.write(parseInt(day)+"天"+hour+"小时"+"<br/><br/>" )
+			
+			var temperature;
+			temperature = 5/9.0*(80-32);
+			
+			document.write(temperature+"<br/><br/>")
+			
+
+			function Num () {
+				var num = document.getElementById("num").value;
+				console.log(num)
+				alert("百位："+parseInt(num/100%10)+" 十位："+parseInt(num%100/10)+" 个位："+parseInt(num%10));
+			}
+			
+			
+		</script>
+		<!--<script src="js/index.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<body>
+		<!--<input type="button" id="btn" value="点吗" onclick="alert('出来')" />-->
+		num = <input id="num" type="text" /> <input type="button" value="提交" onclick="Num()" />
+	</body>
+</html>

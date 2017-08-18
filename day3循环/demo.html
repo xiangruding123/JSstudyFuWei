@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day03</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 当重复进行某件事的时候，就考虑用循环，循环首先要找循环三要素，找到后再套用循环结构就行
+		/*
+			循环三要素：
+			1、从哪里开始(循环起点)
+			2、到哪里结束(循环的结束条件)
+			3、步长（步进） （使循环计数增加或减少，趋近于结束条件）
+		 */
+		
+		// 输出10个helloworld
+		/*
+			重复输出--循环
+			从第一个开始输出
+			到第十一个时结束输出
+			每次递增1
+		*/
+		
+		/*
+			while循环
+			语法：
+
+			表达式1;//表达式1：从哪里开始
+			while(表达式2) {//表达式2：到哪里结束（循环条件）
+				语句组;//当我们满足循环时要执行的语句
+				表达式3;//步长（步进）
+			}
+		 */
+		/*
+			用while循环，完成输出十个helloworld
+
+			var i = 1;
+			while(i<11) {
+				document.write("hello world!<br/>");
+				i++;
+			}
+		*/
+	
+		/*
+			// 输出1-100的整数
+			// 1  100  ++
+			var i = 1;
+			while(i<=100) {
+				document.write(i+"<br/>");
+				i++;
+			}
+		*/
+
+		/*
+		// 输出m-n的整数
+		var m = parseInt(prompt("请输入一个整数："));
+		var n = parseInt(prompt("请输入一个整数："));
+		if(m<n) {
+			var i = m;
+			while(i<=n) {
+				document.write(i+"<br/>");
+				i++;
+			}
+		} else {
+			var i = m;
+			while(i>=n) {
+				document.write(i+"<br/>");
+				i--;
+			}
+		}
+		*/
+	
+		/*
+			求10！
+			var i = 1, ji = 1;
+			while(i<=10) {
+				ji *= i;
+				i++;
+			}
+			alert(ji);
+		*/
+	
+
+		/*
+			do while:直到型循环(先斩后奏，先执行一次)
+			语法：
+			表达式1:
+			do{
+				语句组;
+				表达式3;
+			}while(表达式2);
+		*/
+		/*
+			// 用do while循环，完成输出十个helloworld, 循环思想一样，变了一种写法而已
+			var i = 1;
+			do{
+				document.write("hello world</br>");
+				i++;
+			}while(i<=10);
+		*/
+		/*
+			求1+2+3+......+100和
+			var i = 1, sum = 0;
+			do{
+				sum += i;
+				i++;
+			}while(i<=100);
+			alert(sum);
+		*/
+		/*
+			输出m至n的自然数中的奇数和与偶数和，并统计偶数和奇数的个数分别是多少
+			//m n ++
+			//5 6 7 8 9 10
+			var m = parseInt(prompt("请输入m："));
+			var n = parseInt(prompt("请输入n："));
+			var even_sum=0, odd_sum=0, even_num=0, odd_num=0;//even偶数、odd奇数
+			if(m>n) {
+				var t = m;
+				m = n;
+				n = t;
+			}
+			var i = m;
+			do{
+				if(i%2==0) {
+					even_sum += i;
+					even_num++;
+				} else {
+					odd_sum += i;
+					odd_num++;
+				}
+				i++;
+			}while(i<=n)
+			document.write("奇数和是："+odd_sum+"<br/>奇数个数是："+odd_num+"<br/>");
+			document.write("偶数和是："+even_sum+"<br/>偶数个数是："+even_num+"<br/>");
+		*/
+
+		/*
+			表达式1;//表达式1：从哪里开始
+			while(表达式2) {//表达式2：到哪里结束（循环条件）
+				语句组;//当我们满足循环时要执行的语句
+				表达式3;//步长（步进）
+			}
+
+			表达式1:
+			do{
+				语句组;
+				表达式3;
+			}while(表达式2);
+
+			while和do while的区别
+			1、如果循环条件第一次为真时，没有区别
+			2、如果循环条件第一次为假时，do while循环至少要执行一次循环体，而while循环一次都不执行
+			3、while是先判断条件，后执行语句，do while是先执行语句，后判断条件
+			var i = 3;
+			while(i == 4) {
+				i++;
+			}
+			alert(i);//i=3
+			
+			var i = 3;
+			do{
+				i++;
+			}while(i == 4);
+			alert(i);//i=5
+			*/
+		
+		/*
+			for:
+			语法：
+			for(表达式1; 表达式2; 表达式3) {
+				语句组;
+			}
+			// 用for循环输出十次hello world
+			for(var i = 1; i < 11; i++) {
+				document.write("hello world<br/>")
+			}
+
+			// 输出1-100中可以被4整除的数
+			for(var i=1; i<101; i++) {
+				if(i%4 == 0) {
+					document.write(i+"<br/>");
+				}
+			}
+
+			// 输出九九乘法表
+			for(var i=1; i<=9; i++) {
+				for(var j=1; j<=i; j++) {
+					document.write(j+"*"+i+"="+i*j+"&nbsp;");
+				}
+				document.write("<br/>");
+			}
+			//for三个表达式都在一起，while和do while嵌套都混在一起，所有程序员更喜欢用for
+		*/
+		/*
+		// 输出一元钱的兑换方案
+			1角  0  10  ++
+			2角  0  5   ++  
+			5角  0  2   ++
+			== 10
+			1 2 5
+			0张一角 0张贰角 2张伍角
+			0张一角 5张贰角 0张伍角
+			1张一角 2张贰角 1张伍角
+			2张一角 4张贰角 0张伍角
+			3张一角 1张贰角 1张伍角
+			4张一角 3张贰角 0张伍角
+			5张一角 0张贰角 1张伍角
+			6张一角 2张贰角 0张伍角
+			8张一角 1张贰角 0张伍角
+			10张一角 0张贰角 0张伍角
+
+			// 0 10 ++
+			var count = 0;
+			for(var y=0; y<=10; y++) {
+				// 0 5 ++
+				for(var e=0; e<=5; e++) {
+					// 0 2 ++
+					for(var w=0; w<=2; w++) {
+						if(y+e*2+w*5 == 10) {
+							document.write(y+"张一角&nbsp;"+e+"张二角&nbsp;"+w+"张五角&nbsp;<br/>");
+							count++;
+						}
+					}
+				}
+			}
+			alert("数量是："+count);
+
+			for(var y=0; y<=10; y++) {
+				for(var e=0; e<=5; e++) {
+					for(var w=0; w<=2; w++) {
+						if(y+e*2+w*5 == 10) {
+							document.write(y+"张一角 "+e+"张贰角 "+w+"张伍角<br/>");
+						}
+					}
+				}
+			}
+		*/
+	
+		/*
+			break:
+			1、用在switch语句中，终止switch语句的执行
+			2、用在循环中，终止本层for循环
+			continue:用在循环语句中，终止一次循环，提前进入下一次循环
+			//输出1-6里面除3以外的其他数
+			for(var i=1; i<=6; i++) {
+				if(i == 3) {
+					// break;
+					continue;
+				} else {
+					document.write(i+" ");
+				}
+			}
+
+			// 利用循环输出
+			124
+			134
+			234
+			1234
+
+			for(var i=1; i<=4; i++) {
+				for(var j=1; j<=4; j++) {
+					if((i==1 && j==3) || (i==2 && j==2) || (i==3 && j==1)) {
+						continue;
+						// break;
+						// alert("continue之后");
+					} else {
+						document.write(j);
+					}
+				}
+			}
+			//1、如果已执行break语句，就不会执行循环体中位于break后的语句。
+			2、在多层循环中，一个break语句只向外跳一层。
+		*/
+	</script>
+</body>
+</html>

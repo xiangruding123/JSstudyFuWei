@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业_文字颜色大小变化</title>
+		<script>
+			/*
+			 * 写一个定时器,每隔一秒修改一次div内文本颜色和文字大小.最开始这个文字是默认大小,大小开始增大,当增大了6次以后,
+				文字大小开始缩小,缩小6次,文字再开始增大…
+			 */
+			
+			window.onload = function() {
+				var box = document.getElementById("box");
+				var colors = ["red", "black", "pink", "green", "blue", "yellow"];
+				var i=1, fontTmp=5;
+				setInterval(function() {
+					box.style.color = colors[i++];
+					box.style.fontSize = numFromStr(box.style.fontSize) + fontTmp +"px";
+					if(i==6) {
+						i=0;
+						fontTmp *= -1;
+					}
+				}, 300)
+			}
+			
+			//字符串转数字: 16px
+			function numFromStr(str) {
+				var index = str.indexOf("px");
+				var num = Number(str.substring(0, index));
+				return num;
+			}
+		</script>
+		
+	</head>
+	<body>
+		
+		<div id="box" style="color:red; font-size: 16px; background-color: purple; width: 400px; height: 300px;">看我72变</div>
+		
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title></title>
+
+	<script type="text/javascript">
+
+		document.onclick = function() {
+
+			//opener: 父窗口, 打开子窗口的window对象
+			//opener: 谷歌浏览器不支持, IE/火狐浏览器支持
+			opener.document.write("子窗口让我干的, 不关我的事");
+			//document.write("子窗口让我干的, 不关我的事");
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<p> 
+		点击屏幕任意一个地方..
+	</p>
+
+</body>
+</html>

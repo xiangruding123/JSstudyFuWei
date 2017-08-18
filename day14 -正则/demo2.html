@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+
+			//使用点元字符: .
+			//. 元字符，代表除了换行之外的所有单个字符
+			// var pattern = /g..gle/;  //. 匹配一个任意的字符
+			// var str = "aaagoigleaaa";
+			// var str = "goidgle";
+			// console.log(pattern.test(str));
+			
+			//重复多次匹配: *
+			//重复多次匹配  *号元字符，出现任意次
+			// var pattern = /g.*gle/; //*匹配0到多个字符
+			// var str = "goo34df@34$%oogle";
+			// var str = "goo34df@34$%ooglee";
+			// var str = "goo34df@34$%oogelee";
+			// console.log(pattern.test(str));
+			
+			//使用字符类匹配: []
+			//[]表示字符可以出现的范围
+			// var pattern = /g[a-z]*gle/; //[a-z]* 表示任意0到多个a-z的字符
+			// var str = "gaowwwgledddd";
+			// var str = "g2owwwgle";
+			// console.log(pattern.test(str));
+			
+			//^非
+			// var pattern = /g[^0-9]*gle/;  //[^0-9]* 表示任意0到多个非0-9的字符
+			// var str = "dddgoogleddd";
+			// var str = "g1oogle";
+			// console.log(pattern.test(str));
+			
+			//+ 表示至少1次
+			// var pattern = /[a-z][A-Z]+/;  //[A-Z]+ 表示 1到多次A-Z的字符
+			// var str = "gOOGLE";
+			// var str = "google";
+			// console.log(pattern.test(str));
+			
+			//使用元符号匹配
+			//\w 等价于[a-zA-Z0-9_]
+			// var pattern = /g\w*gle/;  //\w* 表示匹配任意多个所有字母,数字和_(下划线)
+			// var str = "goo_2_gle";
+			// var str = "g@oo_2_gle";
+			// console.log(pattern.test(str));
+
+			// \d 代表数字  等价于[0-9]
+			// var pattern = /google\d*/;  //\d* 表示匹配任意多个数字
+			// var str = "dddgoogle3";
+			// var str = "googlesss3";//不报错  零个到多个
+			// var pattern = /google\d+/;
+			// console.log(pattern.test(str));
+
+			//  \D{7,}匹配至少 7 个非数字  相当于[^0-9]{7,}
+			// var pattern = /\D{7,}/;  //\D{7,} 表示匹配至少7个非数字
+			// var str = "gooogle3";
+			// var str = "gooo3";
+			// console.log(pattern.test(str));
+
+
+			//使用锚元字符匹配[^表示非]  在外面表示以^开头匹配
+			// /^ 匹配开始  $/ 匹配结尾
+			// var pattern = /^google$/;  //^从开头匹配,  $从结尾开始匹配, 中间是google
+			// var str = "googlegoogle";
+			// var str = "google";
+			// console.log(pattern.test(str));
+			
+			// \s 匹配空格
+			// var pattern = /goo\sgle/;  //\s 匹配空格
+			// var str = "dddgoo gleddd";
+			// var str = "goo gle";
+			// console.log(pattern.test(str));
+
+			//\b 可以匹配是否到了边界, 把google当成一个单词来搜索xxgoogle 后面是空格到边界了 googlexx后面是xx不到边界 
+			// var pattern = /google\b/;  //\b 表示匹配是否到了边界,空格、碰到边
+			// var str = "google ";
+			// var str = "googless googledd xxgoogleaa google";
+			// console.log(pattern.test(str));
+			
+			// var pattern = /google\b/g;  //\b 表示匹配是否到了边界
+			// while(pattern.exec(str)) {
+
+			// 	console.log(pattern.lastIndex);
+			// }
+			
+			//使用或模式匹配: |
+			//  | 代表或者的意思   匹配其中一种字符串
+			// var pattern = /google|baidu|bing/;  //| 匹配三个中的其中一个字符串
+			// var str = "googl2e bai3du;bingl";
+			// var str = "googl2e bai3du;bin1gl";
+			// console.log(pattern.test(str));
+			
+			//分组模式匹配: ()
+			// （） 加上小括号  将内容进行分组，可以作为一个整体进行多次匹配
+			// var pattern = /(google){4,8}/;  //匹配分组中的字符串出现4-8次
+			// var str = "googlegooglegooglegoogle";
+			// var str = "googlegooglegoogle";
+			// console.log(pattern.test(str));
+			
+			// RegExp.$1是RegExp的一个属性,指的是与正则表达式匹配的第一个 子匹配(以括号为标志)字符串
+			// var pattern = /8(.*)8/;  //获取8..8之间的任意字符串
+			// var str = "this is 8google8";
+			// console.log(str.match(pattern));
+			// console.log(pattern.exec(str));
+			// console.log(RegExp.$1);    //得到第一个分组里的字符串内容(.*)
+			// RegExp.$1是属性   除了在replace方法第二个参数可以简写为$1之外，其他的全部要用RegExp.$1
+
+			// var pattern = /8(.*)8/;  //获取8..8之间的任意字符
+			// var str = "this is 8google8";
+			// var result = str.replace(pattern, "<strong>$1</strong>")
+			// console.log(result);
+			
+			// var pattern = /(.*)\s(.*)/;  //空格两边的字符串
+			// var str = "google baidu";
+			// var result = str.replace(pattern, "$2 $1"); //交换值
+			// console.log(result); //baidu google
+			
+			
+			//使用exec返回数组
+			//exce 方法将匹配到的内容  返回，并将（）分组的内容也放入数组  返回
+			// var pattern = /^[a-z]+\s[0-9]{4}$/i;  //
+			// var str = "googe 2016";
+			// console.log(pattern.exec(str)); //符合正则,返回数组
+			// console.log(pattern.test(str));
+			
+			// var pattern = /^[a-z]+/i;  //只匹配字母
+			// var str = "google 2016";
+			// console.log(pattern.exec(str)); //google
+			
+			// var pattern = /^([a-z]+)\s([0-9]{4})$/i;  //使用分组
+			// var str = "google 2016";
+			// console.log(pattern.exec(str)); //["google 2016", "google", "2016", index: 0, input: "google 2016"]
+			// console.log(pattern.exec(str)[0]); //google 2016
+			// console.log(pattern.exec(str)[1]); //google  RegExp.$1
+			// console.log(pattern.exec(str)[2]); //2016    RegExp.$2
+			
+			//捕获性分组和非捕获性分组
+			// var pattern = /(\d+)([a-z])/;  //捕获性分组,RegExp.$1 “记忆”下了匹配的字符。
+			// var str = "123abc";
+			// console.log(pattern.exec(str)); //["123a", "123", "a", index: 0, input: "123abc"]
+			
+			// var pattern = /(\d+)(?:[a-z])/;  //非捕获性分组 ，在()左边添加 ?:
+			// var str = "123abc";
+			// console.log(pattern.exec(str)); //["123a", "123", index: 0, input: "123abc"]
+			// console.log(RegExp.$1+" "+RegExp.$2);//?:后面的拿不到
+			
+			
+			//使用分组嵌套
+			// ["ABC", "ABC", "BC", "C", index: 0, input: "ABC"]
+			// var pattern = /(A(B(C)))/;  //从外往内捕获
+			// var str = "ABC";
+			// console.log(pattern.exec(str)); 
+
+			
+			//使用特殊字符匹配
+			// var pattern = /\.\[\/b\]/;  //\表示转义 .和[]都是字符 不代表任何正则匹配的语义
+			// var str = ".[/b]";
+			// console.log(pattern.test(str)); 
+			
+			
+			//使用换行模式
+			// var pattern = /^\d+/mg;  //启用了换行模式 , ^表示开始是匹配数字, m表示换行,换行后又认为是开始
+			// var str = "1,baidu\n2k2,google\n3,bing";
+			// var result = str.replace(pattern, "#");
+			// console.log(result); 
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

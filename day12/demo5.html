@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件监听</title>
+		<script>
+			/*
+			
+			可以绑定多个函数在一个对象上
+			执行顺序按照绑定的顺序来
+			第三个参数是否使用捕捉(反向冒泡)，默认false，为冒泡
+			对象名.addEventListener("事件名（不带ON）"，函数名，[true/false]);(FF下) 
+			对象名.attachEvent("事件名"，函数名);(IE下) 
+			*/
+		
+			/*如果多人开发一个项目，添加相同的事件，会出现被覆盖的现象*/
+			window.onload = function() {
+				// var myBtn1 = document.getElementById("myBtn1");
+				
+				// myBtn1.onclick = function() {
+				// 	alert("111");
+				// }
+				// myBtn1.onclick = function() {
+				// 	alert("222");
+				// }
+				//基于对开发的考虑，我是希望这两个方法都被执行
+				//第三个参数 是管着 冒泡或者捕获的 true捕获.  false 代表冒泡, 可不填，默认为false
+				// myBtn1.addEventListener("click", myFunc1, false);
+				// myBtn1.addEventListener("click", myFunc2, false);
+				// myBtn1.addEventListener("click", myFunc2, false);
+				// myBtn1.addEventListener("click", myFunc1, false);
+				// function myFunc1(){
+				// 	alert("111");
+				// }
+				// function myFunc2(){
+				// 	alert("222");
+				// }
+				// myBtn1.addEventListener("click", function() {
+
+				// })
+				// function myFunc1(e){
+				// 	alert(e.type);
+				// }
+			}
+			
+
+			//可以去除重复函数
+			
+				// function method(){
+	   //              alert("x");
+	   //          }
+	            
+	   //          box.addEventListener('click',method,false);
+	   //          box.addEventListener('click',method,false);
+            
+           
+
+			// window.onload = function() {
+			// 	//冒泡
+			// 	document.addEventListener("click", fun1, true)
+			// 	function fun1() {
+			// 		alert("您的屁出了水面1");
+			// 	}
+
+			// 	document.documentElement.addEventListener("click", fun2, true)
+			// 	function fun2() {
+			// 		alert("您的屁出了水面2");
+			// 	}
+
+			// 	document.body.addEventListener("click", fun3, true)
+			// 	function fun3() {
+			// 		alert("您的屁出了水面3");
+			// 	}
+
+			// 	document.getElementById("box").addEventListener("click", fun4, true)
+			// 	function fun4() {
+			// 		alert("您的屁出了水面4");
+			// 	}
+
+			// 	document.getElementById("input_box").addEventListener("click", fun5, true)
+			// 	function fun5() {
+			// 		alert("您的屁出了水面5");
+			// 	}
+			// }
+	
+
+			/*解除事件监听*/
+			// window.onload = function(){
+			// 	document.getElementById("myBtn1").addEventListener("click", myFunc1, false);
+			// 	document.getElementById("myBtn2").addEventListener("click", myFunc2, false);
+			// }
+			
+			// function myFunc1(){
+			// 	alert("亲");
+			// }
+			// function myFunc2(){
+			// 	document.getElementById("myBtn1").removeEventListener("click", myFunc1);
+			// }
+			
+
+			//attachEvent()解决ie兼容性问题,执行顺序为fun5->fun4->fun3->fun2->fun1  
+			//addEventListener(),执行顺序为fun1->fun2->fun3->fun4->fun5  detachEvent
+			// window.onload = function() {
+			// 	//冒泡
+			// 	console.log(document.getElementById("box").attachEvent);
+			// 	if(document.getElementById("box").attachEvent) {
+			// 		document.attachEvent("onclick", fun1)
+			// 		function fun1() {
+			// 			alert("您的屁出了水面1");
+			// 		}
+
+
+			// 		document.documentElement.attachEvent("onclick", fun2)
+			// 		function fun2() {
+			// 			alert("您的屁出了水面2");
+			// 		}
+
+			// 		document.body.attachEvent("onclick", fun3)
+			// 		function fun3() {
+			// 			alert("您的屁出了水面3");
+			// 		}
+
+			// 		document.getElementById("box").attachEvent("onclick", fun4)
+			// 		function fun4() {
+			// 			alert("您的屁出了水面4");
+			// 		}
+
+			// 		document.getElementById("input_box").attachEvent("onclick", fun5)
+			// 		function fun5() {
+			// 			alert("您的屁出了水面5");
+			// 		}
+			// 	} else {
+			// 		document.addEventListener("click", fun1, false)
+			// 		function fun1() {
+			// 			alert("您的屁出了水面1");
+			// 		}
+
+			// 		document.documentElement.addEventListener("click", fun2, false)
+			// 		function fun2() {
+			// 			alert("您的屁出了水面2");
+			// 		}
+
+			// 		document.body.addEventListener("click", fun3, false)
+			// 		function fun3() {
+			// 			alert("您的屁出了水面3");
+			// 		}
+
+			// 		document.getElementById("box").addEventListener("click", fun4, false)
+			// 		function fun4() {
+			// 			alert("您的屁出了水面4");
+			// 		}
+
+			// 		document.getElementById("input_box").addEventListener("click", fun5, false)
+			// 		function fun5() {
+			// 			alert("您的屁出了水面5");
+			// 		}
+			// 	}
+			// }
+			
+			// 自己封装事件兼容函数
+			// function addEvent(target, type, func) { 
+			//     if (target.addEventListener) { //非ie 和ie9 
+			//         target.addEventListener(type, func, false); 
+		 //        } else if (target.attachEvent) { //ie6到ie8 
+			//         target.attachEvent("on" + type, func); 
+			//     } else {  //ie5 
+			//     	target["on" + type] = func;
+			//     }
+			// }; 
+
+			// function removeEvent(target, type, func){ 
+			//     if (target.removeEventListener) {
+			//         target.removeEventListener(type, func, false);
+			//     } else if (target.detachEvent) {
+			//         target.detachEvent("on" + type, func); 
+			//     } else {
+			//    		target["on" + type] = null; 
+			//    	}
+			// }; 
+		</script>
+	</head>
+	<body>
+		<input id="myBtn1" type="button" value="按钮" />
+		<input id="myBtn2" type="button" value="让第一个按钮没有点击效果" />
+
+		<!-- 捕获 -->
+		<!-- <div id="box" style="width: 300px; height: 300px; background-color: red;">
+			<input id="input_box" type="button" value="按钮"/>
+		</div> -->
+	</body>
+</html>

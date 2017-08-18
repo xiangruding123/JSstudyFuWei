@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+        
+			//cookie: 浏览器存储方式, 可以做数据缓存
+			//cookie: HTTPCookie
+			
+
+			/*
+			 每个cookie都是一个名/值对  存储的是字符串
+			 cookie 由键/值对形式的文本组成：name=value。完整格式为：
+			 name=value;[expires=date]; [path=path]; [domain=somewhere.com];
+			 [secure]
+             中括号是可选，name=value 是必选。
+			
+            */
+
+
+			// 用户名 zhangsan
+			//document.cookie = "userName=zhangsan";
+			//console.log(document.cookie);
+			
+
+
+
+
+			//设置cookie之后在进行
+			//因为用户浏览器解码的不同, 我们一般将所存的信息转码后再存储
+			//读取的时候, 解码后再进行读取
+
+
+			//存储user=张三
+			// document.cookie = "userName=zhangsan";
+			// document.cookie = "userName=lisi";
+			 //document.cookie = "user=张三";
+			// document.cookie = "user1=wangwu";
+			//console.log(document.cookie);
+			
+
+
+			// document.cookie = "user=" + encodeURIComponent("张三");
+			// alert(encodeURIComponent("张三")); //%E5%BC%A0%E4%B8%89
+			// alert(document.cookie);
+			// alert(decodeURIComponent(document.cookie));
+			
+			
+
+
+			//cookie的有效存储时间:
+			/*
+			 * 默认的有效时间: 在会话结束时, 也就是在浏览器关闭时,cookie中的数据就会清除
+			 */
+            
+			//expires: 设置有效时间
+			//假设想让我的淘宝账户保存7天
+     
+
+			// var date = new Date();
+			// date.setDate(date.getDate() + 7);
+			// alert(date);
+			// document.cookie = "user=张三; expires=" + date;
+			// alert(document.cookie);
+			
+
+
+
+			// var oDate = new Date();
+			// oDate.setDate(oDate.getDate()+7);
+			// document.cookie = "userName=zhangsan; expires="+oDate
+            
+			//如何在当前页面手动删除一个cookie
+			//只要将过期事件设置成已经过去的时间就可以了
+			//获取昨天
+			// var date = new Date();
+			// date.setDate(date.getDate() - 1);
+			// alert(date);
+			
+
+
+
+			//快速设置过去的某一天
+			// var date = new Date(0);//1970/1/1 上午8:00:00"
+			// alert(date);
+			// 清除cookie
+			// document.cookie = "user=; expires=" + date;
+			
+
+			
+			//path限制路径访问，见path1  path2
+			//如果不设置path, 它默认是当前文件所存储的路径
+			//路径设置必须正确, 如果不正确访问不到
+			// 设置在外层，表示当前目录以及当前目录的子目录都能访问
+			// document.cookie = "user1="+encodeURIComponent('张三');
+			// alert(document.cookie);
+			
+			
+
+			//domain 限制域名访问
+			//并且只能设置绑定的域名，也就是说，不同服务器间的cookie文件不共享
+			//domain : 用于限制只有设置的域名才可以访问, 在该域名下的所有网页都可以访问cookie, 
+			//如果没有设置会默认创建cookie的域名(一般是电脑主机名)
+			//一般和服务器域名保持一致
+			//域名: www.baidu.com,
+			// document.cookie = "user=美国队长; domain=www.baidu.com";
+			
+			
+			//secure 限制访问权限
+			//如果不设置, 默认接受任意类型的链接
+			//如果设置了, 则仅限加密链接(https://开头)
+
+			// document.cookie = "user=美国队长; secure";
+			// alert(document.cookie);
+			
+
+		 	// cookie的限制
+			// chrome和Safari没有对cookie的个数做限制，一般浏览器限制同一域名数量为50个
+			// cookie文件的总大小一般为4KB（同一个域名）
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

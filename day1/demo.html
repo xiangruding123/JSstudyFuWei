@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>day01</title>
+
+        <!-- 
+        //JavaScript是一种基于 对象 和 事件驱动 的客户端脚本语言。
+        
+          1995 年， 当时工作在 Netscape(网景)公司的布兰登(Brendan Eich)为解决类似于 “向服务器提交数据之前验证”的问题。
+           在 Netscape Navigator 2.0 与 Sun 公司联手开发一个称之为LiveScript 的脚本语言。
+           为了营销便利，之后更名为 JavaScript
+        
+        JavaScript的组成:
+        ECMAScript/DOM： Document  Object Model/BOM： Browse Object Model/
+          -->
+        
+
+		<!-- <script type="text/javascript">
+			/*
+				内部js
+			*/
+			alert("内部js");
+		</script> -->
+
+
+		<!--外部js, 可以出现写在html文件任何地方， 可以出现多个-->
+		<!-- <script type="text/javascript" src="demo.js">
+			alert("外部引入script标签内部");//一旦外部引入，就不要在script元素里写代码了，不起作用
+		</script> -->
+         
+           <!--  language 已废弃。原来用于代码使用的脚本语言。由于大多数浏览器忽略它，所以不要用了。
+                
+           src  表示要引入的外部文件
+           type  表示脚本语言的类型 -->
+
+
+		<script type="text/javascript">
+			/*
+				 alert()以弹框的形式输出(js)  缺点：阻塞后面代码
+				 document.write()在html页面中（文档区域）输出(可操作html标签)  缺点：改变文档内容
+				 console.log()在控制台输出
+				 作用：对书写的程序进行调试
+			*/
+			/*
+			alert("欢迎学习javascript");
+			document.write("hello, world!");
+			console.log("要学会控制台打印");//按f12出现控制台
+
+			document.write("hello <br/> world");//document换行<br/>
+			alert("欢迎学习\njavascript");//\n转义字符，表示换行
+
+			document.write("&lt;br&gt;")//原样输出标签内容
+			*/
+			
+
+			/*
+				变量命名规则
+				1、不以数字开头的字母、数字、下划线、$组成
+				2、不能是保留字或关键字（例：电话）
+				3、具有相关含义（匈牙利命名法）
+				4、驼峰命名法
+				5、标识符区分大小写，如:age和Age是不同的变量。但强烈不建议，用同一个单词的大小写区分两个变量。
+			*/
+        
+			/*
+			var qf = 3;
+			var qf15000 = 3;
+			var 15000qf =3; //不可以以数字开头
+			var $qf =3;
+			alert($qf)
+
+			//驼峰命名，避免有歧义性的单词：gangan xian ---可变为--->ganGan xiAn
+			//大驼峰：ZhongHuaRenMinGongHeGuo
+			//小驼峰：zhongHUaRenMinGongHeGuo
+			*/
+
+
+			/*
+			//初中未知数，设x=3
+			var iNum = 3;//讲常量（字面常量）3存入变量iNum中
+			var iNumOne, iNumTwo=4, iNumThree=5;
+			iNumOne = iNumTwo + iNumThree;
+			alert(iNumOne);
+			iNumFour = 5;
+			alert(iNumFour);//隐式声明，输出5
+			alert(iNumFive);//隐式声明，未赋值，报错，使用隐式声明必须赋值，建议使用显示声明
+			*/
+
+			/*
+			Number: 3  -3  3.2(浮点数)
+			String: 字符串：以引号为定界符的一串字符(单双引号都是)
+			如："lucy", "123456", 'lucy'
+
+			Boolean: 布尔  true  false  用于条件判断(成立不成立)
+			3 > 4  不成立false
+			*/
+        
+			/*
+			var oNull = null;//***null属于object类型(它是一个对象)为空
+			
+            alert(typeof oNull);//object
+			var num = 3;//number
+			num = 3.2;//number
+			num = "3.2";//string
+			num = true;//boolean
+			alert(typeof num);
+
+			var num;//****定义了一个变量，在内存中开辟了一块空间，但是这个空间内没有任何数据，这时，num里实际是一个undefined;
+			alert(num);
+			alert(typeof num);
+			alert(mum);
+			*/
+
+
+			/*  *************
+			null与其他类型比较
+			*/
+			/*
+			alert(null == 0);//false
+			alert(null == '');//false
+			alert(null == false);//false
+			alert(null == undefined);//true 相等
+
+			alert(null === undefined);//false 不相等
+			alert(null == null);//true
+			*/
+
+
+			// 算数运算符规则，一切正常的数字都正常计算，其他类型时，先转为数字，再进行计算
+			/*
+			//乘法 *
+			alert(3*2);//6
+			alert(3*'3');//9  数字与字符串相乘，先将字符串自动转换成数字，再去计算结果
+			
+            alert(3*'hello');//NaN: Not a Number 将有效数字字符串转为数字，非有效数字字符串在转成数字时，会转成NaN，一个数字乘以一个非数字时，结果是NaN
+			
+            alert(3*undefined);//NaN
+			alert(3*true);//true运算时，会转成数字1计算，false会转成数字0计算
+			
+            alert(3*false);//0
+			alert(3*null);//null在参与运算时，会转成数字0计算
+			*/
+		
+			/*
+			除法 /：先把运算符两边都转为数字再进行计算，不能转为数字的计算结果为NaN
+			 
+			alert(3/2);//1.5
+			alert(3/'2');//1.5
+			
+            alert(3/false);//Infinity
+			
+            alert(3/0);//Infinity  分子非0   分母是0  Infinity，分子分母都是0  NaN
+			
+            alert(3/null);//Infinity
+			
+            alert(3/true);//3
+		
+        	alert(3/'true')//NaN  字符串true被当成字符串解析//字符串非数字的情况下，转为Number是NaN
+			
+            alert(0/3);//0
+			alert(0/0);//NaN
+			*/
+			
+			/*
+			取余 %模运算
+			 */
+			/*
+			alert(5%2);//1
+			alert(5%2.2);//不准确，求余运算尽量都是整数
+			alert(2%5);//被除数小于除数，结果都是被除数
+			*/
+		
+			/*
+			加法 +
+			规则一：(连接符)加号+两边有一个字符串，加号的作用是连接加号两边的数据，产生一个新的字符串
+			 */
+			/*
+			alert(3+3);
+			
+            alert(3+"3");//'33'
+			alert("3"+3+3);//'333'从左向右计算
+			
+            alert(3+NaN);//NaN
+			alert(3+null);//3
+			alert(3+'true');//3true
+			alert(3+undefined);//NaN
+			alert(3+true);//4
+			alert(3+false);//3
+			*/
+		
+			/*
+			减法 - ：
+			 */
+			/*
+			alert(3-2);//1
+			alert(3-"2");//1
+			alert(3-undefined);//NaN
+			*/
+		
+			/*
+			递增 ++：每运行一次++，那所对应的变量+1，结合变量使用
+			递减 --：每运行一次--，所对应的变量-1
+			
+            num++：后缀自增 //将返回num自加运算前的值
+			++num：前缀自增 //将返回num自加运算后的值
+
+			 */
+			
+			// var num = 3;
+			// num++;
+			// alert(num);//4
+			// ++num;
+			// alert(num); 
+			// alert(num++); 
+			// alert(++num); 
+			
+		
+			// 关系运算符
+			// 算数运算符优先级大于关系运算符
+			/*
+			alert(3>5);//false  Boolean  成立都是true   不成立false
+			alert(3>2);//true
+			alert("100">2);//true  运算符有Number类型，都转为Number类型比较
+			alert("100">"2");//false  字符串间比较，先比较第一个字符，如果第一个字符相同时，再比较下一个字符，直到比较结束
+			alert("100">"100");//false
+			alert("1000">"100");//true  0比空大
+			alert("aaz">"aaZ");
+			
+			alert("100">="100");//true
+
+			alert(3=="3");//true  转换数据类型再比较
+			alert(3!="3");//false
+
+			alert(3==="3");//false  不转换数据类型，直接比较   恒等===：类型相同，数值相等
+			*/
+		
+			/*
+			// 赋值运算符
+			var num = 3;//将常量3存入到num的变量中
+			//赋值号左边不可以是常量，左边必须是存放空间的变量  3=3
+			//赋值号右边可以是常量，也可以是变量, 也可以是表达式
+			var numTwo = num;
+			var numTwo = num+5;
+			alert(numTwo);
+			
+			var a = 3;
+			a += 3;//先取运算符左边变量中的值，与运算符右边表达式的值进行相应的算数运算，运算后的结果再次赋值给左边的变量a=a+3
+			alert(a);
+			a *= 4 + 6;//a = a*(4+6)
+			*/
+			// alert("aaz">"aaZ");
+			/*
+			typeof 
+			 */
+			/*
+			alert(typeof 3)//"number"
+			alert(typeof (typeof 3))//string
+		
+			var a = 3;
+			var aa = new Number(3);
+			alert(typeof a);
+			alert(typeof aa);
+			*/
+		
+			/*
+			alert(isNaN(3*undefined));//true
+			alert(isNaN(3*null));//false   null进行数值运算时，转为0
+			alert(parseInt("23.3af"));//23  只转有效数字开头的字符串(整数)，否则，一律转成NaN
+			alert(parseInt("a2342.3"));//NaN
+			alert(parseFloat("23.23.34afd"));//23.23   只转有效数字开头的字符串(小数)， 否则， 一律转成NaN
+			alert(Number("23.234"))//Number只能转换有效数字字符串，只要有非数字字符，就会转成NaN
+			alert(Number("23.234.23"))//NaN
+			alert(Number("23.234aa"))//NaN
+			*/
+		
+			/*
+			eval将字符串强制转换为表达式，并返回计算后的结果
+			 */
+			/*
+			alert("1+1");//1+1
+			alert(eval("1+1"));//2
+			alert(eval("1+a"));//报错   a未定义
+			alert(eval("1+undefined"));//NaN
+			*/
+		</script>
+	</head>
+	<body>
+		<!--行内js-->
+		<!-- <input type="button" value="按钮" onclick="alert('行内js')"/> -->
+	</body>
+</html>

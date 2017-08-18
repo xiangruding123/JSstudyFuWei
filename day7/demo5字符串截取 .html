@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		//字符串截取
+		/* 
+			substring(start, end) 
+				第一个参数: 开始截取的下标,
+				第二个参数: 结束截取的下标(不包括)
+		*/
+	
+	
+		// var str = "hellox world";
+		// var subStr = str.substring(2, 5);
+		// document.write(subStr + "<br>");
+		
+		//3, 已知字符串 str = “I hate BeiJing!”,提取第3个字符到第5个字符
+		// var str = "I hate BeiJing!";
+		// var newStr = str.substring(3, 6);
+		// document.write(newStr);
+		// document.write("<br/>");
+
+		//把字符串分割为字符串数组。
+		/*
+			split("") : 分割符(以分割为整体进行分割)
+			返回值: 返回分割后各部分组成的数组
+		*/
+		// var str = "aaa hello world hello world";
+		// var array = str.split("lo");
+		// document.write(array + "<br>"); 
+
+		// var array = str.split("");//以空字符串分割，按每个字符分割
+		// var array = str.split(" ");
+		// document.write(array + "<br>"); 
+		// var array = str.split("world");//如果后面没有，以空串填充
+		// console.log(array);
+
+
+		/*
+			https://www.baidu.com/s?name=avery&age=20&sex=male&like=
+			取出name,age和sex的值
+		*/
+		// var str = "https://www.baidu.com/s?name=avery&age=20&sex=male&like=";
+		// //? 分割
+		// var arr1 = str.split("?");
+		// var str1 = arr1[1];
+		// var arr2 = str1.split("&");
+		// //遍历每一个参数
+		// for(var i=0; i<arr2.length; i++) {
+		// 	var str2 = arr2[i];
+		// 	var arr3 = str2.split("=");
+		// 	var key = arr3[0];
+		// 	var value = arr3[1];
+		// 	if(key) {//字符串放在条件里，空转为false，非空转为true
+		// 		document.write(key+":"+value+"<br/>");
+		// 	}
+		// }
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

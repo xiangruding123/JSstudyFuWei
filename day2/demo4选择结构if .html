@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择结构if</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		if: 单分支选择结构
+		if(条件){
+			语句组;
+		}
+		// 输入任意三个数，由大到小输出
+		var numOne = 3, numTwo = 8, numThree = 5;
+		var t = 0;
+		if(numOne>numTwo) {
+			t = numOne;
+			numOne = numTwo;
+			numTwo = t;
+		}
+		if(numOne>numThree) {
+			t = numOne;
+			numOne = numThree;
+			numThree = t;
+		}
+		if(numTwo>numThree) {
+			t = numTwo;
+			numTwo = numThree;
+			numThree = t;
+		}
+		alert(numOne+">"+numTwo+">"+numThree);
+		*/
+	
+		/*
+		if else:双分支选择结构  先判断条件，如果为true执行语句A，false执行语句B
+		if(条件) {
+			语句A;
+		}else{
+			语句B;
+		}
+
+		// 求两个数的最大值
+		var one = 3, two = 5;
+		if(one > two) {
+			alert(one);
+		} else {
+			alert(two);
+		}
+
+		// 输入一个数，输出这个数的绝对值
+		var num = -3;
+		if(num > 0) {
+			alert(num);
+		} else {
+			alert(-num);
+		}
+		 */
+		
+
+		/*
+		if else if:多分支选择结构
+		语法：
+		if(条件1) {
+			语句组1;
+		} else if(条件2) {
+			语句组2;
+		} else if(条件2) {
+			语句组3;
+		}
+		......
+		else if(条件n) {
+			语句组n;
+		} else {
+			语句组n+1;
+		}
+
+		// 设计一个具有+、-、*、/、%的简单计算器
+		// 1 + 1 = 2
+		// prompt()以弹框的形式，让用户输入数据，是一个字符串
+		var one = Number(prompt("请输入一个数字"));
+		var fuHao = prompt("请输入一个运算符");
+		var two = Number(prompt("请输入一个数字"));
+
+		if(fuHao == "+") {
+			alert(one+two);
+		} else if(fuHao == "-") {
+			alert(one-two);
+		} else if(fuHao == "*") {
+			alert(one*two);
+		} else if(fuHao == "/") {
+			if(two == 0) {
+				alert("除数不能为0");
+			} else {
+				alert(one/two);
+			}
+		} else if(fuHao == "%"){
+			alert(one%two);
+		} else {
+			alert("您输入的运算符不合法");
+		}
+		 */
+	</script>
+</body>
+</html>

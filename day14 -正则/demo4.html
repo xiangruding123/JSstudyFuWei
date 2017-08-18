@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 假设有一个多字符的片断重复出现，
+			 * 把"really"、"really really"，以及任意数量连续出现的"really"字符串换成一个简单的"very
+			  	Billy tried really hard
+				Sally tried really really hard
+				Timmy tried really really really hard
+				Johnny tried really really really really hard
+
+			 */
+			
+			var str = "Billy tried really hard \nSally tried really really hard \nTimmy tried really really really hard \nJohnny tried really really really really hard";
+			var pattern = /(really\s)+/g; 
+			var result = str.replace(pattern, "very ");
+			console.log(result);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

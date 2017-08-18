@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>参照物父元素offsetParent、offsetTop、offsetLeft元素的偏移量</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				padding: 100px;
+			}
+			.div1 {
+				padding: 10px;
+
+			}
+			
+			
+		</style>
+		<script>
+			window.onload = function() {
+				// offsetParent是个只读属性，返回最近显示指定定位的容器元素的引用。如果元素没有指定位置，最近的元素或者根元素（标准模式下是html，怪异模式下是body）就是offsetParent。当元素的style.display='none'或position为fixed时，offsetParent返回null。即只对可见元素起作用
+				
+
+
+
+				//1,当某个元素的父元素或以上元素都未进行CSS定位时，则返回body元素，
+				//  也就是说元素的偏移量（offsetTop、offsetLeft）等属性是以body为参照物的
+				 
+				// var div1 = document.getElementById("div11");
+				// console.log(div1.offsetParent);
+				// console.log(div1.offsetLeft);
+				// console.log(div1.offsetTop);
+				
+
+				//2, 当某个元素的父元素进行了CSS定位时（absolute或者relative），
+				//   则返回父元素，也就是说元素的偏移量是以父元素为参照物的
+				var div2 = document.getElementById("div22");
+				console.log(div2.offsetParent);
+				console.log(div2.offsetLeft);
+				console.log(div2.offsetTop);
+				
+
+
+				//3, 当某个元素及其父元素都未进行CSS定位时，则返回距离最近的使用了CSS定位的元素
+				// var div1 = document.getElementById("div11");
+				// console.log(div1.offsetParent);
+				// console.log(div1.offsetLeft);
+				// console.log(div1.offsetTop);
+				
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="div3" style="position: relative; padding: 10px;">
+			<div id="div1" class="div1" style="width: 200px; height: 200px; background: red;">
+				<div id="div11" style="width: 100px; height: 100px; background: cornflowerblue;"></div>
+			</div>
+		</div>
+		<br />
+		
+
+		<div id="div2" class="div1" style="width: 200px; height: 200px; background: red; position: absolute;">
+			<div id="div22" style="width: 100px; height: 100px; background: cornflowerblue;"></div>
+		</div>
+		<br />
+
+
+	</body>
+</html>

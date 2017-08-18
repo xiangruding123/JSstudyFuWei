@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通过name获取元素</title>
+		<script>
+			
+			window.onload = function() {
+								
+				/*
+				 * 通过name获取节点对象: 需要该元素节点支持name属性，一般用于表单
+				 * 某些低版本浏览器会有兼容性问题
+				 * document.getElementsByName("box_name");
+				 */
+				//节点数组 [object NodeList]
+				var divList = document.getElementsByName("box_name"); 
+				// console.log(divList); // [object NodeList]节点列表数组
+				// console.log(divList[0]);
+				// console.log(divList.item(0));
+				// 
+				
+				// console.log(divList[0].tagName);
+				// console.log(divList[0].innerHTML); //获取元素标签包含的内容
+				// console.log(divList[2].value); //获取value属性的值
+				
+				//【注】使用上述方法的时候,判定当前标签是否拥有name属性,一般表单标签都具有name属性，如:input有name属性
+				//【注】getElementsByName一般使用在表单标签
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div name="box_name" id="box_id" title="box_title" style="color:red" class="box" bbb="aaa">测试Div<em>这是部分斜体</em></div>
+		<div name="box_name">测试DIV2</div>
+		<input type="text" name="box_name" value="text"/>
+	</body>
+</html>

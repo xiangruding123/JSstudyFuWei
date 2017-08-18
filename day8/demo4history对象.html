@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>history对象</title>
+		<script>
+			/*
+			* ?
+				history对象 : 
+				history对象是window对象的属性，它保存这用户上网的记录,从窗口被打开的那一刻算起。
+			*/
+			console.log(history.length); //当前页面历史记录的条数
+			function back() {
+				history.back(); //返回上一条历史记录
+			}
+
+			function forward() {
+				history.forward(); //进入下一条历史记录
+			}
+
+
+			function go(num) {
+				history.go(num); //在history对象中向前或者向后多少条记录
+			}
+			
+			// history.go(0);//作用跟reload()一样
+			
+
+			 
+		</script>
+	</head>
+
+	<body>
+		<button onclick="history.go(0)">reload</button>
+	</body>
+
+</html>

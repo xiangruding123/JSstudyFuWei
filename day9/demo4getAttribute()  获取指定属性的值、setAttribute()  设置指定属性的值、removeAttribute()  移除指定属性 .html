@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			window.onload = function() {
+				
+				/*
+				 * getAttribute() : 获取指定属性的值 
+				 * setAttribute() : 设置指定属性的值
+				 * removeAttribute() : 移除指定属性
+				 * */
+
+
+
+				var box = document.getElementById("box_id"); //节点对象
+				
+				console.log(box.id);   //.点语法获取属性值
+				console.log(box.getAttribute("id")); //getAttribute("")方法获取属性值
+				
+
+
+				// console.log(box.bbb); //无法获取自定义的属性
+				// IE最新版本不支持，其他浏览器不支持，因此要采用这个方法来访问
+				// console.log(box.getAttribute("bbb")); 
+				console.log(box.getAttribute("data-id")); //可以获取自定义的属性
+				
+				// box.hahaha = "hahahah";//DOM对象
+				console.log(box.hahaha);  //undefined（不能获取自定义的属性）
+				
+
+
+				console.log(box.className);   //点（.）获取类属性值时不可可以直接写class。要写成className；
+				console.log(box.getAttribute("class")); //getAttribute()获取类属性值时可以直接写class
+				
+
+
+
+
+				//设置属性值: 如果存在则覆盖, 如果不存在则添加
+				//IE低版本浏览器不支持这个方法
+				/*
+				 * 第一个参数: 属性名
+				 * 第二个参数: 属性值
+				 */
+				
+
+				// box.setAttribute("name", "box_attrName");
+				//设置/添加自定义的属性
+				// box.setAttribute("bbb", "xxx");
+				// console.log(box.getAttribute("bbb"));
+				
+				//移除属性
+				//某些低版本浏览器不支持
+				// box.removeAttribute("bbb");
+			}
+			
+		</script>
+	</head>
+	<body>
+	
+		<div name="box_name" id="box_id" title="box_title" style="color:red" class="box" data-id="dataId" bbb="aaa">测试Div<em>这是部分斜体</em></div>
+	
+	</body>
+</html>

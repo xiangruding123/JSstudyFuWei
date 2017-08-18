@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			作用域(堆栈)
+			函数内部定义的变量，局部变量，作用域仅在函数内部
+			函数参数也是函数局部变量
+		*/
+
+		/*
+		   var quanJu = "全局";//全局变量
+		   niMing = "匿名";//没用var声明的变量，作用域是全局
+			 function m1(num1, num2){//局部变量
+			    var b = 5;//局部变量
+	    	    alert(b);//5
+	    	    alert(num1);
+	    		alert(quanJu);
+	    		alert(niMing);
+		    }
+		    m1(1, 2);
+		    alert(num1);//局部变量不能在外部引用
+			alert(b);
+			alert(quanJu);
+			alert(niMing);
+		*/
+
+		// 形参和实参同名
+		/*
+			var a = 10;//全局
+		    function m1(){
+			   var a = 5;//局部
+	    	   alert(a);//5
+		    }
+			m1();
+		    alert(a); //10全局
+    	*/
+
+	</script>
+</body>
+</html>

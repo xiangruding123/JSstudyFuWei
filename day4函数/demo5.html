@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>dom简单操作</title>
+
+	<script type="text/javascript">
+
+		//判断奇偶性
+		function isEven(num) {
+			if (num % 2 == 0) {
+				alert(num + ": 是偶数");
+			}
+			else {
+				alert(num + ": 是奇数");
+			}
+		}
+
+		function btnClick() {
+			//被按钮点击时调用
+
+			//获取id="box"的节点的value值
+			var num = document.getElementById("box").value;
+
+			//调用函数
+			isEven(num);
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<input type="text" id="box" value="0">
+	<!-- onclick -->
+	<button type="button" onclick="btnClick()"> 检查奇偶性 </button>
+
+</body>
+</html>

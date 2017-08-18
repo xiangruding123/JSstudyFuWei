@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		switch语句  先匹配，再往下执行
+		语法：
+		switch(表达式) {
+			case 常量表达式1: 语句组1;[break;]//[]可加可不加
+				......
+			case 常量表达式n: 语句组n;[break;]
+			[default: 语句组n+1;]
+		}
+		注
+		1、switch后面的表达式只能是整数和字符
+		2、case后的常量表达式不允许出现变量
+		3、case后的常量值不允许重复
+		4、case和default的顺序可以随意
+		//switch实现简单计算器
+		var one = Number(prompt("请输入一个数字"));
+		var fuHao = prompt("请输入一个运算符");
+		var two = Number(prompt("请输入一个数字"));
+		switch(fuHao) {
+			case "+" : alert(one+two);break;
+			case "-" : alert(one-two);break;
+			case "*" : alert(one*two);break;
+			case "/" : two == 0? alert("除数不能为0") : alert(one/two);break;
+			case "%" : alert(one%two);break;
+			default: alert("请输入一个运算符");
+		}
+
+		// 输入一个月份，输出这个月有多少天
+		// 1、3、5、7、8、10、12  31天
+		// 4、6、8、11  30天
+		// 2 29天 28天
+		var month = parseInt(prompt("请输入一个月份:"));
+		switch(month) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				alert("31天");
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				alert("30天");
+				break;
+			case 2:
+				var year = parseInt(prompt("请输入一个年份:"));
+				alert(year%4 == 0 && year%100 != 0 || year%400 == 0? "29天" : "28天");
+		}
+
+
+		// 计算某日(2016.3.1)是该年的第几天
+		var year = parseInt(prompt("请输入一个年份:"));
+		var month = parseInt(prompt("请输入一个月份："));
+		var date = parseInt(prompt("请输入一个日："));
+		var sum = 0;
+		switch(month) {
+			// case 1: sum += date;
+			// case 2: sum += 31 + date;
+			// case 3: year%4 == 0 && year%100 != 0 || year%400 == 0 ? sum += 31 + 29 + date : sum += 31 + 28 + date;
+			// case 4: sum += 31 + 
+			case 12: sum += 30;
+			case 11: sum += 31;
+			case 10: sum += 30;
+			case 9: sum += 31;
+			case 8: sum += 31;
+			case 7: sum += 30;
+			case 6: sum += 31;
+			case 5: sum += 30;
+			case 4: sum += 31;
+			case 3: sum += (year%4 == 0 && year%100 != 0 || year%400 == 0) ? 29 : 28;
+			case 2: sum += 31;
+			case 1: sum += date;
+		}
+		alert(sum);
+		 */
+	</script>
+</body>
+</html>

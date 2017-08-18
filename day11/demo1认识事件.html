@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>认识事件</title>
+		
+		<script>
+			
+			//事件: 三个大类
+			//鼠标事件, 键盘事件, HTML事件
+			
+			//处理事件的行为, 事先预定好的
+			//在代码中, 我们可以给某一事件预先绑定一个函数, 当这个事件被触发的时候,就会去触发这个函数
+			
+			
+			//关联事件和函数的方式分为两种:
+			//1, 内联模式
+			/*
+			 这种模型是最传统接单的一种处理事件的方法。在内联模型中，
+			 事件处理函数是 HTML 标签的一个属性，用于处理指定事件。
+			 虽然内联在早期使用较多，但它是和 HTML 混写的， 并没有与 HTML 分离。
+			 * */
+			// 全局函数 
+			// function show() {
+			// 	alert("我是张三");
+			// }
+			
+			//2, 脚本模式
+			//所有的事件函数都是由两部分组成: on+事件名称
+			window.onload = function() {
+				// console.log("页面完全加载了");
+				
+				// function show1() {
+				// 	alert("我是丽丝");
+				// }	
+
+				var inputEle = document.getElementsByTagName("input")[2]; //按钮3
+				console.log(inputEle);
+				
+				//单击
+				// inputEle.onclick = show1; //赋值函数名  down和up的组合  down和up都发生在这一个元素上
+				// inputEle.onclick = function(){
+				// 	console.log("单击");
+				// };
+				
+				//双击
+				// inputEle.ondblclick = function() {
+				// 	console.log("双击");
+				// }
+				
+				//按下鼠标  
+				// inputEle.onmousedown = function() {  //鼠标在元素上按下
+				// 	console.log("按下鼠标");
+				// }
+				
+				//松开鼠标
+				// inputEle.onmouseup = function(){  //鼠标可在别的元素按下，在这个元素抬起
+				// 	console.log("松开鼠标");
+				// }
+				
+				//当鼠标移动到区域上
+				// inputEle.onmouseover = function() {
+				// 	console.log("鼠标移动到区域");
+				// }
+				
+				//当鼠标移动出区域
+				// inputEle.onmouseout = function() {
+				// 	console.log("鼠标移动出区域");
+				// }
+				
+				//当鼠标在元素区域移动的时候
+				// inputEle.onmousemove = function() {
+				// 	console.log("鼠标在元素区域内移动");
+				// }
+				
+				//1, 鼠标事件
+				/*
+				        一块空白区域,当鼠标移动到区域内,显示"亲爱的我爱你"
+					当我鼠标移开的时候,显示"对不起开玩笑"
+					当我鼠标不停的在区域内移动的时候,变换颜色
+				 */
+				// var box = document.getElementById("box"); //box节点
+				// box.onmouseover = function() {
+				// 	this.innerHTML = "亲爱的, 我爱你!";
+				// }
+				// box.onmouseout = function() {
+				// 	this.innerHTML = "对不起, 开玩笑!";
+				// }
+				// box.onmousemove = function() {
+				// 	var color = "rgba(" + parseInt(Math.random()*255) + "," + parseInt(Math.random()*255) + "," + parseInt(Math.random()*255) + ",1)";
+				// 	this.style.backgroundColor = color;
+				// }
+				
+				/*
+				当父级设置onmouseover及onmouseout时，鼠标从父级移入子级，则触发父级的onmouseout后又触发onmouseover；从子级移入父级后再次触发父级的oumouseout后又触发onmouseover。
+				 用于二级菜单*/
+				// var over1 = document.getElementById("over1");
+				// over1.onmouseover = function() {
+				// 	console.log("1");
+				// }
+				/*
+				1、KeyDown触发后，不一定触发KeyUp，当KeyDown 按下后，拖动鼠标，那么将不会触发KeyUp事件。
+				2、KeyPress主要用来捕获数字(注意：包括Shift+数字的符号)、字母（注意：包括大小写）、小键盘等除了F1-12、SHIFT、Alt、Ctrl、Insert、Home、PgUp、Delete、End、PgDn、ScrollLock、Pause、NumLock、{菜单键}、{开始键}和方向键外的ANSI字符
+				3、KeyDown 和KeyUp 通常可以捕获键盘除了PrScrn所有按键(这里不讨论特殊键盘的特殊键）
+				4、KeyPress 只能捕获单个字符（*）
+				5、KeyDown 和KeyUp 可以捕获组合键。（*）
+				6、KeyPress 可以捕获单个字符的大小写（*）
+				7、KeyDown和KeyUp 对于单个字符捕获的KeyValue 都是一个值，也就是不能判断单个字符的大小写。
+				8、KeyPress 不区分小键盘和主键盘的数字字符。
+				9、KeyDown 和KeyUp 区分小键盘和主键盘的数字字符。
+				其中PrScrn 按键KeyPress、KeyDown和KeyUp 都不能捕获。（*）
+				 */
+				//键盘事件
+				
+				//按下键盘上的任意键,如果按住不放，会重复触发。
+				// window.onkeydown = function() {
+				// 	console.log("按下了一个键");
+				// }
+				
+				//按任意键松开时触发
+				// window.onkeyup = function(){
+				// 	console.log("按任意键松开")
+				// }
+				
+				//按下字符键, 字母、数字、符号
+				// window.onkeypress = function(){
+				// 	console.log("按下字符键");
+				// }
+
+
+				//input节点
+				// var inputEle = document.getElementsByTagName("input")[5];
+				
+				//当文本框中文本被选中或者多选的时候触发
+				// inputEle.onselect = function(){
+				// 	console.log("input文本框中文本被选中");
+				// }
+				
+				//当文本修改,并且失去焦点时触发(文本框、下拉列表、文本域) 
+				// inputEle.onchange = function() {
+				// 	console.log("input文本修改");
+				// }
+				
+				// var oInput = document.getElementsByTagName("select")[0];
+				// oInput.onchange = function() {
+				// 	console.log("已被修改");
+				// }
+				
+				//文本框获取到焦点
+				// inputEle.onfocus = function() {
+				// 	console.log("获取到焦点")
+				// }
+				
+				//失去焦点时触发
+				// inputEle.onblur = function() {
+				// 	console.log("失去焦点");
+				// }
+				
+				//form节点
+				// var formEle = document.getElementsByTagName("form")[0];
+				// formEle.onreset = function() {
+				// 	console.log("被我重置了");
+				// }
+				// formEle.onsubmit = function() {
+				// 	console.log("被提交了");
+				// 	// debugger
+				// }
+				
+				
+				//window
+				// window.onresize = function() {
+				// 	console.log("窗口大小被改变了");
+				// }
+				// 垂直、水平都是滚动  绑定在有滚动条的元素上
+				// window.onscroll = function(){
+				// 	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				// 	var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+				// 	console.log(scrollTop);
+				// 	console.log(scrollLeft);
+				// 	console.log("页面滚动了");
+				// }
+				
+				
+			}
+			
+			//HTML事件
+			// 当页面全部加载完成后调用
+			// window.onload = function(){
+			// }
+			
+			//当页面完全卸载后时候调用,页面关闭
+			// window.onunload = function() {
+			// 	console.log("页面卸载了")
+			// 	debugger
+			// }
+			
+		</script>
+		
+	</head>
+	<body>
+		<form>
+			<!-- 内联模式 -->
+			<input type="button" value="按钮" onclick="alert('张三')" />
+			<input type="button" value="按钮2" onclick="show()"/>
+			<br />
+			
+			<!-- 脚本模式 -->
+			<input type="button" value="按钮3" />
+			<select>
+				<option>1</option>
+				<option>2</option>
+			</select>
+			<input type="reset" value="重置" />
+			<input type="submit" value="提交" />
+
+
+			<input type="text" value="脚本模式" />
+			
+		</form>
+
+		<div id="box" style="width: 300px; height: 300px; background-color: red; font-size: 30px;"></div>
+		
+		<div>djkajflkdjalkfjlkdajlkfjlkdajflkjdsalkjflkjdsafjlkdjalkfjdjalkfjlkdajflkkjdkajlkfjdklajlkfjdlkajflkjdlkajflkdjlkfjlkdjlakjfkldajskfjlkdjfajlkdjsalkjflkdajlkfjdasjfjdlksajfjdsalkfjlkajdslkfjdlksajflkjdsalkfjlkdsaj</div>
+
+		<div id="over1" style="width: 300px; height: 300px; background: red;">
+			<div id="over2" style="width: 100px; height: 100px; background: blue;">
+				
+			</div>
+		</div>
+	</body>
+</html>

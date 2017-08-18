@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>特殊运算符typeof、new、eval()</title>
+		<script type="text/javascript">
+			/*
+			typeof 
+			 */
+			/*
+			alert(typeof 3)//"number"
+			alert(typeof (typeof 3))//string
+		
+			var a = 3;
+			var aa = new Number(3);
+			alert(typeof a);
+			alert(typeof aa);
+			*/
+		
+			/*
+			alert(isNaN(3*undefined));//true
+			alert(isNaN(3*null));//false   null进行数值运算时，转为0
+			alert(parseInt("23.3af"));//23  只转有效数字开头的字符串(整数)，否则，一律转成NaN
+			alert(parseInt("a2342.3"));//NaN
+			alert(parseFloat("23.23.34afd"));//23.23   只转有效数字开头的字符串(小数)， 否则， 一律转成NaN
+			alert(Number("23.234"))//Number只能转换有效数字字符串，只要有非数字字符，就会转成NaN
+			alert(Number("23.234.23"))//NaN
+			alert(Number("23.234aa"))//NaN
+			*/
+		
+			/*
+			eval将字符串强制转换为表达式，并返回计算后的结果
+			 */
+			/*
+			alert("1+1");//1+1
+			alert(eval("1+1"));//2
+			alert(eval("1+a"));//报错   a未定义
+			alert(eval("1+undefined"));//NaN
+			*/
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

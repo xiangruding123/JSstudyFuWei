@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>删除空白文本节点</title>
+		<script>
+			window.onload = function() {
+				
+				//获取body节点
+				var body = document.getElementsByTagName("body")[0];
+				console.log(body.childNodes.length);
+				console.log(body.childNodes);
+				/*
+				 在IE中会忽略掉空白文本节点， 打印2个节点
+				 在非IE中会打印5个节点（其中3个空白节点）
+				 * */
+
+
+
+
+
+				//删除空白文本节点
+				alert(removeSpaceNode(body.childNodes).length);
+				// 
+				alert(removeSpaceNode2(body.childNodes).length);
+				
+
+				// var box = document.getElementById("box_index");
+				// alert(box.childNodes.length);
+				// alert(removeWriteNode(box).childNodes.length);
+			}
+			
+
+
+			
+			//将数组中的空白节点删除： 方法1
+			//参数： 节点的子节点数组
+			
+			// function removeSpaceNode(nodes) {
+			// 	var ret = new Array();
+			// 	for (var i = 0; i < nodes.length; i++) {
+			// 		if (nodes[i].nodeType == 3 && /^\s+$/.test(nodes[i].nodeValue)) {
+			// 			continue;
+			// 		}
+			// 		ret.push(nodes[i]);
+			// 	}
+			// 	return ret;
+			// }
+			
+
+			//将数组中的空白节点删除： 方法2
+			//参数： 节点的子节点数组
+			
+			// function removeSpaceNode2(nodes) {
+			// 	for (var i = 0; i < nodes.length; i++) {
+			// 		if (nodes[i].nodeType == 3 && /^\s+$/.test(nodes[i].nodeValue)) {
+			// 			//通过父节点删除掉该空白子节点
+			// 			//removeChild() ： 删除子节点
+			// 			nodes[i].parentNode.removeChild(nodes[i]);
+			// 		}
+			// 	}
+			// 	return nodes;
+			// }
+			
+
+
+
+
+			//删除掉节点中的空白文本子节点
+			//参数是节点
+			// function removeWriteNode(pNode) {
+			// 	for (var i = 0; i < pNode.childNodes.length; i++) {
+			// 		if (pNode.childNodes[i].nodeType == 3 && /^\s+$/.test(pNode.childNodes[i].nodeValue)) {
+			// 			//如果是空白文本节点
+			// 			pNode.removeChild(pNode.childNodes[i]);
+			// 		}
+			// 	}
+			// 	return pNode;
+			// }
+		
+
+		
+			
+		</script>
+	</head>
+
+
+	<body>
+		<div id="box" title="标题" class="pox" style="color: red;">测试DIV1<em>我是斜体</em>测试DIV2</div>
+		
+		<div id="box_index">
+			<p>段落1</p>
+			<p>段落2</p>
+			<p>段落3</p>
+		</div>
+
+	</body>
+
+</html>

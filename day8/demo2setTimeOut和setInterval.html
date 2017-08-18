@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>setTimeOut和setInterval</title>
+		<script>
+		
+			//计时器
+			//setInterval()
+			
+
+			//延时器
+			/* setTimeout(,)
+				第一个参数: 要执行的代码
+				第二个参数: 延时的毫秒数
+				返回值: 返回延时器唯一标识符
+			*/
+		
+			//1, 写法一,不推荐
+			//window.setTimeout("alert(1)", 2000);
+			//setTimeout("alert(1)", 2000);
+			
+			//2, 写法二
+			// function box(){
+			// 	alert("2");
+			// }
+            // 
+			// setTimeout(box, 2000);//函数名，不带()，box指向函数的地址
+			// setTimeout("box()", 2000);//"执行的js代码"
+			
+
+			//3, 写法三
+			/*
+				推荐写法: 扩展性好, 性能高
+			*/
+			// var str = setTimeout(function() {
+			// 	alert("3");
+			// }, 2000);
+			// alert(str);
+			// //取消延时器
+			// clearTimeout(str);
+			
+
+
+
+
+
+		// setInterval 设置间隔 控制调用方法
+		// 写法1
+		setInterval("document.write(11+'<br/>')",2000);
+		
+		// 写法 2
+		// var num = 0;
+		// function box(){
+		// 	num++;
+		// 	document.write("hello"+num+"<br/>");
+		// }
+		// setInterval(box,1000);
+		 
+		// 写法3	
+		// setInterval(function (){//匿名 
+		// 	document.write("hello<br/>");
+		// },1000);
+		
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onload和onscroll事件</title>
+		<style>
+			body{
+				width: 100%;
+				height: 3000px;
+			}
+		</style>
+		<script>
+			// window.onload = function() {
+			// 	var btn = document.getElementById("btn");
+			// 	// js中给同一元素绑定多个相同事件处理函数时，会执行最后面的事件处理函数，上面的直接不执行，打断点看
+			// 	btn.onclick = function() {
+			// 		alert("aaa");
+			// 	}
+			// 	btn.onclick = function() {
+			// 		alert("bbb");
+			// 	}
+			// }
+
+			//onload: 加载页面完成之后,页面所有的资源也都加载完
+			//一个页面只能出现一次，出现多次，只有最后一次起作用
+			// window.onload = function() {
+			// 	alert("aaa");
+			// }
+			// window.onload = function() {
+			// 	alert("bbb");
+			// }
+			// 
+			// 
+			// 、、、、、、、、、、、、、、、、
+
+
+
+			//滚动事件, 进度条滚动时触发
+			 window.onscroll = function() {
+/*
+标准浏览器是只认识documentElement.scrollTop的，但chrome却不认识这个，在有文档声明时，chrome也只认识document.body.scrollTop。
+
+
+document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。所以，如果要得到网页的真正的scrollTop值，可以这样：
+*/
+
+				// body是DOM对象里的body子节点，即 <body> 标签；
+				// documentElement 是整个节点树的根节点root，即<html> 标签；
+				// scrollTop属性  网页被卷去的高  url地址栏上面隐藏的
+				
+			 	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				//scrolltop取出的值没有单位  是纯数字！
+				
+			 	var box = document.getElementById("box");
+			 	box.innerHTML = scrollTop;
+			 }
+
+		</script>
+
+
+		<script>
+			// window.onload = function() {
+			// 	alert("ccc");
+			// }
+		</script>
+	</head>
+	<body>
+		<div id="box"  style="width: 100%; height: 30px; background: red; position: absolute; top: 400px;">0</div>
+		<!-- <button id="btn">点击</button> -->
+	</body>
+</html>

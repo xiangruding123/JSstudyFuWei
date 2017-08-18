@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<script>
+			
+			// 1, 创建正则表达式
+			//   使用new RegExp
+			// var box = new RegExp("box"); //必须传参,字符串
+			// alert(box); // /box/
+			
+			// var box = new RegExp("box", "ig"); //第二个参数修饰符
+			// alert(box); // /box/gi
+			
+
+			/*
+			 i : 忽略大小写
+			 g : 全局匹配
+			 * */
+			
+			//字面量的方式创建正则表达式:
+			// var box = /box/ig;
+			
+			
+			//匹配字符串
+			/*
+			 * 可以使用下面两个方法之一:
+			 * test() : 用于检测一个字符串是否匹配某个模式,返回true则符合, false则不符合
+			 * exec() : 用于检索字符串中的正则表达式的匹配。返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。返回数组则符合, null 则不符合
+			 */
+
+			// var box = new RegExp("box");//默认不区分大小写,找到就返回，不存在全局一说
+			// var box = new RegExp("box", "i");
+			// var box = /box/ig;
+			// var box = /box/i;
+
+			// var str = "This is a Box Box Box";
+			// console.log(box.exec(str));
+			// var str = "This is a Box box box Box";
+			// console.log(box.test(str));
+			// console.log(box.exec(str));
+			// console.log(box.lastIndex);//非全局，lastIndex为0
+			// console.log(/box/.test(str));
+			// console.log(/box/i.exec(str));
+			
+			/*
+				exec全局与非全局的差别
+				exec方法执行一次只会返回一个结果，正则表达式lastindex属性表示下次匹配的起始位置，对应的，每次exec方法执行后，非全局lastIndex0不变，全局将把 RegExpObject 的 lastIndex 属性设置为匹配文本的最后一个字符的下一个位置，而字符串match方法一次就返回所有的结果
+			 */
+			
+			// var str = "Visit W3School, W3school is a place to study web technology."; 
+			// var patt = new RegExp("W3School", "i");
+			// var patt = new RegExp("W3School", "gi");
+			// console.log(patt.exec(str)+" "+patt.lastIndex)//不设全局一样
+			// console.log(str.match(patt))
+			// console.log(patt.exec(str)+" "+patt.lastIndex)
+			// console.log(patt.exec(str)+" "+patt.lastIndex);
+
+			// var length = str.match(patt).length;
+			// for(var i=0; i<length; i++) {
+			// 	console.log(patt.exec(str)+" ");
+			// }
+			
+
+			// 执行一次就往后匹配一次，所以要记住结果
+			// while ((result = patt.exec(str)) != null)  {
+			//   console.log(result+" "+patt.lastIndex);
+			// }
+			
+
+
+
+
+
+
+			// String
+			//match()使用字符串的方法进行正则匹配
+			//match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。返回指定的值，而不是字符串的位置。
+			// var str = "This is a Box box Box Box";
+			// console.log(str.match(/box/i)); //不全局只匹配一个
+			// console.log(str.match(/box/ig)); //全局返回全部匹配的数组
+			
+			//查找并替换, 不改变原字符串, 如果匹配则返回替换后的字符串, 否则返回原字符串
+			// console.log(str.replace(/box/i, "xxx")); 
+			// console.log(str.replace(/abox/ig, "xxx")); 
+			// console.log(str);
+			
+			// console.log(str.search(/box/i)); //返回字符串的起始位置,找不到则返回-1
+			
+			//按指定的字符串拆分, 返回拆分后的数组, 否则返回原字符串
+			// console.log(str.split(/b/i));			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

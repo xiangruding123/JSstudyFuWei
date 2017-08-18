@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+</head>
+<body>
+	<input type = "button" value = "打印how are you" onclick="print_how()">
+	<script type="text/javascript">
+		/*
+			反复输出hello world
+			1、先输出一个how are you
+			2、再输出三个hello world
+			3、再输出两个how are you
+			4、再输出两个hello world
+			封装成一个函数(实现输出hello world这个功能)
+			封装{} 起个名 函数标志性的() 关键字function
+		*/
+		/*
+			function print() {//函数头
+				// 函数体
+				document.write("hello world<br/>");
+			}
+			function print_how() {//函数头
+				// 函数体
+				document.write("how are you<br/>");
+			}
+			print_how();
+			print();//调用函数的方式：函数名()
+			print();
+			print();
+			print_how();
+			print_how();
+			print();
+			print();
+			console.log(typeof print);
+		*/
+		/*
+			function 函数名(){
+				//函数体
+			}
+		*/
+		//函数名:用户自定义的名字
+		//1.函数名必须体现,函数的功能
+		//2.函数名首字母小写,第二个单词开始,首字母大写
+		//3.函数名中的单词可以简写,但是简写的单词必须是易懂的
+		
+		// typeof 函数名  function类型	
+		
+		/*
+			// 语句定义法
+			// 放在前后调用都可以执行
+			print_how();
+			function print_how() {//函数头
+				// 函数体
+				alert("how are you");
+			}
+			print_how();
+			// 表达式定义法: 只能先定义函数，再去调用函数，不会影响按钮的调用
+			// 必须先声明，后调用
+			print_how();//报错，未定义
+			var print_how = function() {
+				alert("how are you");
+			}
+			print_how();
+		*/
+
+	</script>
+</body>
+</html>

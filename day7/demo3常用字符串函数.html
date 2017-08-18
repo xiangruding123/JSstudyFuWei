@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+
+
+
+		//返回在指定位置的字符。charAt(字符位置)
+		// var str = "helaoworld";
+		// var c = str.charAt(3); //获取下标为3的字符，下标从0开始
+		// document.write(c + "<br>");   
+
+
+
+		// 返回在指定的位置的字符的 Unicode 编码。0-65535
+		// var code = str.charCodeAt(3); //获取下标为3的字符编码
+		// document.write(code + "<br>");   
+
+
+		// 从字符编码创建一个字符串。
+		// var c = String.fromCharCode(100); //将编码转换成字符
+		// document.write(c + "<br>");  //d
+
+
+
+		//常用字符串函数
+		//concat: 连接字符串
+		// var str1 = "hello";
+		// var str2 = str1.concat(" world");
+		// document.write(str1 + "<br>");   //不改变原字符串
+		// document.write(str2 + "<br>");  
+
+
+		//indexOf: 返回子串在父串中第一次出现的位置
+		// var str = "abqwertycdabcd";
+		// var subStr = "bcd";
+		// var index = str.indexOf(subStr); 
+		// document.write(index + "<br>");  
+
+
+
+		//lastIndexOf: 查找字符串中最后一次出现的位置
+		// var index = str.lastIndexOf(subStr); 
+		// document.write(index + "<br>");  
+		
+
+		
+		//2, 已知字符串str = “I love BeiJing”,找出love的范围
+		// var str = "I love BeiJing";
+		// var subStr = "love";
+		// var index = str.indexOf(subStr);
+		// var length = subStr.length;
+		// document.write(index + "~" +(index+length));
+		// document.write("<br/>");
+		
+
+
+		//4,将字符串str = “When I was young, I love a girl in neighbor class.”中,从young提取到girl。但是不许数
+		// var str = "When I was young, I love a girl in neighbor class.";
+		// var str1 = "young";
+		// var str2 = "girl";
+		// var index1 = str.indexOf(str1);
+		// var index2 = str.indexOf(str2);
+		// 
+		// var newStr = str.substring(index1, (index2+str2.length));
+		// document.write(newStr);
+		// document.write("<br/>");
+
+
+
+		//search() : 查找字符串第一次出现的位置
+		// 传入参数为正则表达式，进行正则匹配RegExp  new RegExp("abc")  /abc/
+		// var index = str.search(/abc/);
+		// document.write(index + "<br>");  
+
+
+		//replace(): 替换
+		//var str = "how are Are are you!";
+		// var newStr = str.replace("are", "old are");//只会改第一个
+		//var newStr = str.replace(/are/, "old are");//只会改第一个
+		//第一个参数是我们需要被替换的字符串
+		//第二个参数是我们要替换成的字符串
+		//上述方式只能执行一次: 如果有多个"are"则只会改第一个
+		// document.write(newStr + "<br>");  
+		// document.write(str + "<br>");   //不改变原来的字符串
+
+
+		//上述方式不能够满足我们正常的使用，我们更加希望能够进行全局的替换
+
+
+		//如果要进行全局的匹配替换,应该使用正则表达式
+		//在正则表达式里面,g代表全局匹配,i代表忽略大小写
+		// var newStr = str.replace(/are/gi, "old are");
+		// document.write(newStr + "<br>");  
+		//document.write("<br>"); 
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

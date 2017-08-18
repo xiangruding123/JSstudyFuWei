@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组常用方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//增、删、改、截、拼、排、转
+		
+		//增  前增 后增
+		// var arr = [1,2,3,4,5];
+		
+		//前增  队列  先进先出
+		// arr.unshift(1);
+		// arr.unshift(6,7,8);//[6,7,8,1,2,3,4,5]
+		// alert(arr);
+		
+		
+		//后增  栈  先进后出
+		// arr.push(9);
+		// arr.push(6,6,6);
+		// alert(arr);
+		
+	
+
+		//删  前删 后删
+		//前删 没有参数，一次只能删一个
+		
+		// arr.shift();
+		// alert(arr);
+		
+	
+
+		// 后删
+		/* 
+		arr.pop();
+		alert(arr);
+		*/
+	
+
+		//改/添加
+		// splice(起始下标(包括它),删除的元素个数,后面的参数是在删除后的坐标上增加元素的内容);(改变原来的值)
+		
+
+
+		// arr.splice(1,1,9,9,9);
+		// alert(arr);
+		//只删除
+		//arr.splice(2,2);
+		//alert(arr);
+		//只增加
+        //
+        //
+        var arr = [1,2,3,4,5];
+        var a=9;    
+		arr.splice(3,0,a,8,8);
+		alert(arr);
+
+		
+		
+	
+		// 截(截取)
+		// slice(start, end)截取指定位置的元素，包含起始位置start的元素，不包含结束位置end的元素, 返回一个新的结果，不影响原来的结果(即：不改变原来的值)
+		
+		// arr.slice(1,3);
+		// alert(arr);//不影响原来
+		// alert(arr.slice(1,3));
+		// alert(arr.slice(0));//不传第二个参数，表示从start位置开始，截取到最后
+		
+	
+		//拼(拼接)
+		//concat()方法用于连接两个或多个数组拼接后生成一个新的数组，对原数组没有影响
+		/*
+		arr.concat("hello");
+		alert(arr);
+		alert(arr.concat("hello"));
+		alert(arr.concat("hello", "fine"));
+		var arr1 = [6,6,6];
+		alert(arr.concat(arr1));
+		*/
+
+		// 排  排序
+		// reverse()逆序排列 会改变原数组(数组倒过来)  (即：改变原来的值)
+		// arr.reverse();
+		// alert(arr);
+		
+
+
+
+
+		//sort()
+		//1、如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
+		// 按字母(字符串排序)排序
+		
+		// arr = [6,3,500,1,2];
+		// arr.sort();
+		// alert(arr);
+		
+		// sort(函数)//上面的代码没有按照数值的大小对数字进行排序，要实现这一点，就必须使用一个排序函数
+		/*
+		function sortNumber(a,b) {
+			return a - b;
+		}*/
+		// arr = [6,3,500,1,2];
+		// alert(arr);
+		// arr.sort(sortNumber);//1 2 3 6 500
+		// alert(arr);
+		// alert(arr.sort());//1 2 3 500 6
+		// alert(arr);
+	
+
+
+
+		// 转换
+		// toString()将数组转成字符串,  默认以逗号（,）连接
+		/*
+		var str = arr.toString();
+		alert(str);
+		alert(arr);
+		alert(typeof str);
+		alert(typeof arr);
+		*/
+
+
+		//join("拼接符")将数组转成字符串，中间以拼接符连接(不改变原来的值)
+		
+		// arr = [6,3,500,1,2];
+		// var str = arr.join("-");
+		// // var str = arr.join("=");
+		// alert(str);
+		// alert(arr);
+		 
+		
+	</script>
+</body>
+</html>

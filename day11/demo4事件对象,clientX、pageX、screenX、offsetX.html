@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件对象,clientX、pageX、screenX、offsetX</title>
+		<style>
+			body{
+				height: 1000px;
+			}
+		</style>
+		<script>
+			
+			window.onload = function(){
+				
+				//this: 指向绑定当前执行函数的绑定对象
+				
+				// var box = document.getElementById("box"); //box节点
+				// box.onclick = function(){
+				// 	console.log(this);
+				// 	console.log(this.nodeName);
+				// 	console.log(this.nodeType);
+				// }
+				// var inputEle = document.getElementsByTagName("input")[0];
+				// inputEle.onclick = function(){
+				// 	console.log(this);
+				// 	console.log(this.nodeName);
+				// }
+                
+				
+				//document: 绑定事件的控件
+				//onclick: click是事件类型, onclick是处理事件的函数
+				//格式: 绑定对象.事件函数 = 匿名函数/函数名
+				// document.onclick = function(){
+				// 	console.log(this);
+				// }
+				
+
+				//事件对象
+				// document.onclick = function() {
+				// 	console.log(arguments.length);
+				// 	console.log(arguments[0]); //MouseEvent	
+				// 	//arguments: 隐藏参数
+				// }
+				
+				
+				//event: 事件对象
+				// document.onclick = function(evt){
+					//evt :事件对象
+					//对于部分浏览器不支持, 认识window.event
+					//兼容所有浏览器
+
+					// var e = evt || window.event;//支持ie
+					// console.log(e);
+					// 事件类型
+					// console.log(e.type);
+				// }
+
+				// box.onmousedown = function(evt) {
+				// 	var e = evt || window.event; //获取到事件
+				// 	switch(e.button) {
+				// 		case 0:
+				// 			console.log("点击了鼠标左键");
+				// 			break;
+				// 		case 1:
+				// 			console.log("点击了轮滚");	
+				// 			break;
+				// 		case 2:
+				// 			console.log("右键");
+				// 			break;
+				// 		default: 
+				// 			break;
+				// 	}
+				// }
+				
+				// function getButton(evt) { //跨浏览器左中右键单击相应
+				// 	var e = evt || window.event;
+				// 	if (evt) { //Chrome 浏览器支持 W3C 和 IE
+				// 		return e.button; //要注意判断顺序
+				// 	} else if (window.event) {//兼容ie
+				// 		switch(e.button) {
+				// 			case 1 :
+				// 				return 0;
+				// 			case 4 :
+				// 				return 1;
+				// 			case 2 :
+				// 				return 2;
+				// 		}
+				// 	}
+				// }
+
+				
+				//鼠标移动
+				// document.onclick = function(evt){
+					
+					// var e = evt || window.event;
+					// 浏览器可视区域的坐标
+					// box.innerHTML = e.clientX + "," + e.clientY;
+					
+					// 电脑屏幕的坐标
+					// box.innerHTML = e.screenX + "," + e.screenY;
+					
+					// 根坐标，有些版本不兼容可用clientY+scrollTop
+					// box.innerHTML = e.pageX + "," + e.pageY;
+				// }
+				// box.onclick = function(evt) {
+				// 	var e = evt || event;
+				// 	box.innerHTML = e.offsetX + "," + e.offsetY;
+				// }
+				// offsetX相对于事件源对象的偏移量,也就是元素坐标，相对坐标offsetY
+
+			}
+
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="box" style="width: 300px; height: 300px; background-color: red; position: fixed; left: 200px; top: 30px;"></div>
+		<input type="button" value="按钮" />
+		
+	</body>
+</html>

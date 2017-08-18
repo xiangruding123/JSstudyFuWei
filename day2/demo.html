@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day02</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// typeof 3>4  false  typeof优先级比关系运算符高
+		//  
+		/*
+		逻辑运算符
+		 */
+		/*
+		!(非): 逻辑关系： 非真即假，非假即真(返回true  false)
+		 */
+		/*
+		alert(!false);//true
+		alert(!true);//false
+		alert(!0);//true
+		alert(!1);//false
+		alert(!2);//false  一切非零的数都为true
+		alert(!2>1);//false  !优先级比关系运算符高，先执行!  !2-->false-->0  
+		alert(!(2>1));//false  ()优先级最高
+		alert(!(2>10));//true
+		// 拓展：常见题目
+		// alert(!!10);//true
+		*/
+
+
+		/*
+		&&(与)：逻辑关系：两边都为真，结果为真，如果有一边为假，结果为假
+		 */
+		/*
+		var a = 5;
+		alert(a>3 && a<10);//true
+		alert(a>3 && a<4);//false
+		*/
+	
+
+		/*
+		||(或)：逻辑关系：两边都为假，结果为假，如果有一边为真，结果为真
+		 */
+		/*
+		var a = 5;
+		alert(a>3 || a<4);//true
+		alert(a>8 || a<4);//false
+		alert(a>8 || a<8);//true
+		*/
+	
+
+		// 拓展
+		/*
+		&&、||短路
+		 */
+		/*
+		var a = 5;
+		alert(a>4 && b>3);//报错
+		alert(a<4 && b>3);//false  &&前面为false，后面就不执行了
+		alert(a>6 || b>3);//报错
+		alert(a<6 || b>3);//true  ||前面为true，后面就不执行了
+		*/
+	
+		/*
+		练习题
+		 */
+		/*
+		1、判断下列表达式true、false
+		(100>3) && ("a">"c");//false  字母比较按照ascii码，都是小写时，后面的ascii码比前面大，都大写时也是，a是97，A是65
+		(100>3) || ("a">"c");//true
+		!(100<3);//true
+		*/
+	
+		/*
+		2、判断一个变量是否是空格、数字(0-9)、字母(a-z||A-Z)中的一种
+		var a = " ";
+		alert(a == " " || (a>=0 && a<=9) || (a>="a"&&a<="z") || (a>="A"&&a<="Z"));
+		 */
+		
+		/*
+		3、判断year表示的某一年是否是闰年，用逻辑表达式。
+		闰年的判断条件是符合下面二者之一
+		(1)能被4整除但不能被100整除
+		(2)能被400整除
+		var year = 2000;
+		alert((year%4 == 0 && year%100 != 0) || year%400 ==0);
+		 */
+		
+		/*
+		?:（三目运算符） 有三个数据
+		(双目) + - * / %  有两个数据
+		(单目) ! ++ --    有一个数据
+		!3  i++ 
+		1 + 1   1 > 1
+		(条件) ? 语句A : 语句B  运行逻辑：先判断条件，true执行前面的语句A，false执行后面的语句B
+		var a = 3, b = 5;
+		alert(a>b?a:b);
+		 */
+		
+		
+		/*
+		// 1、判断一个年份是闰年还是平年
+		var year = 2016;
+		alert((year%4 == 0 && year%100 != 0) || year%400 == 0 ? "闰年": "平年");
+		// 2、判断一个数是奇数还是偶数(偶数都能被2整除)
+		var num = 3;
+		alert(num%2 == 0? "偶数" : "奇数");
+		// 3、判断一个数是正数还是负数
+		var num = 5;
+		// alert(num > 0? "正数" : "负数");
+		alert(num==0? "既不是正数，也不是负数" : num>0? "正数" : "负数");
+		*/
+	
+		/*
+		顺序结构：按照程序的书写顺序，一条一条语句执行，不允许跳过任何一条语句
+		选择结构：按照条件是否成立，选择执行不同的语句段(三目)
+		循环结构：根据条件是否成立，重复执行一个相同的语句块
+		 */
+		/*
+		顺序机构
+		// 求一个三位数各位上的数的和(小数点向左移动几位，要除数还是余数)
+		var num = 123;
+		var b = parseInt(num/100);
+		var s = parseInt(num%100/10);
+		var g = num%10;
+		alert(b+s+g);
+		 */
+
+
+		// if: 单分支选择结构  范围
+		// if(条件){
+		// 	语句组;
+		// }
+		// 输入任意三个数，由大到小输出5>4>3
+		/*
+		var numOne = 3, numTwo = 8, numThree = 5;
+		var t = 0;
+		if(numOne<numTwo) {
+			t = numOne;
+			numOne = numTwo;
+			numTwo = t;
+		}
+		if(numOne<numThree) {
+			t = numOne;
+			numOne = numThree;
+			numThree = t;
+		}
+		if(numTwo<numThree) {
+			t = numTwo;
+			numTwo = numThree;
+			numThree = t;
+		}
+		alert(numOne+">"+numTwo+">"+numThree);
+		*/
+	
+		/*
+		if else:双分支选择结构  先判断条件，如果为true执行语句A，false执行语句B
+		if(条件) {
+			语句A;
+		}else{
+			语句B;
+		}
+
+		// 求两个数的最大值
+		var one = 3, two = 5;
+		if(one > two) {
+			alert(one);
+		} else {
+			alert(two);
+		}
+
+		// 输入一个数，输出这个数的绝对值
+		var num = -3;
+		if(num > 0) {
+			alert(num);
+		} else {
+			alert(-num);
+		}
+		 */
+		
+
+		/*
+		if else if:多分支选择结构
+		语法：
+		if(条件1) {
+			语句组1;
+		} else if(条件2) {
+			语句组2;
+		} else if(条件2) {
+			语句组3;
+		}
+		......
+		else if(条件n) {
+			语句组n;
+		} else {
+			语句组n+1;
+		}
+
+		// 设计一个具有+、-、*、/、%的简单计算器
+		// 1 + 1 = 2
+		// prompt()以弹框的形式，让用户输入数据，是一个字符串, 点击确认，将输入的字符串返回
+		var one = Number(prompt("请输入一个数字"));
+		var fuHao = prompt("请输入一个运算符");
+		var two = Number(prompt("请输入一个数字"));
+
+		if(fuHao == "+") {
+			alert(one+two);
+		} else if(fuHao == "-") {
+			alert(one-two);
+		} else if(fuHao == "*") {
+			alert(one*two);
+		} else if(fuHao == "/") {
+			if(two == 0) {
+				alert("除数不能为0");
+			} else {
+				alert(one/two);
+			}
+		} else if(fuHao == "%"){
+			alert(one%two);
+		} else {
+			alert("您输入的运算符不合法");
+		}
+		 */
+		
+
+		/*
+		switch语句  先匹配，再往下执行
+		语法：
+		switch(表达式) {
+			case 常量表达式1: 语句组1;[break;]//[]可加可不加
+				......
+			case 常量表达式n: 语句组n;[break;]
+			[default: 语句组n+1;]
+		}
+		注
+		1、switch后面的表达式只能是整数和字符
+		2、case后的常量表达式不允许出现变量
+		3、case后的常量值不允许重复
+		4、case和default的顺序可以随意
+		//switch实现简单计算器
+		var one = Number(prompt("请输入一个数字"));
+		var fuHao = prompt("请输入一个运算符");
+		var two = Number(prompt("请输入一个数字"));
+		switch(fuHao) {
+			case "+" : alert(one+two);break;
+			case "-" : alert(one-two);break;
+			case "*" : alert(one*two);break;
+			case "/" : two == 0? alert("除数不能为0") : alert(one/two);break;
+			case "%" : alert(one%two);break;
+			default: alert("请输入一个运算符");
+		}
+
+		// 输入一个月份，输出这个月有多少天
+		// 1、3、5、7、8、10、12  31天
+		// 4、6、8、11  30天
+		// 2 29天 28天
+		var month = parseInt(prompt("请输入一个月份:"));
+		switch(month) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				alert("31天");
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				alert("30天");
+				break;
+			case 2:
+				var year = parseInt(prompt("请输入一个年份:"));
+				alert(year%4 == 0 && year%100 != 0 || year%400 == 0? "29天" : "28天");
+		}
+
+
+		// 计算某日(2016.3.1)是该年的第几天
+		var year = parseInt(prompt("请输入一个年份:"));
+		var month = parseInt(prompt("请输入一个月份："));
+		var date = parseInt(prompt("请输入一个日："));
+		var sum = 0;
+		switch(month) {
+			// case 1: sum += date;
+			// case 2: sum += 31 + date;
+			// case 3: year%4 == 0 && year%100 != 0 || year%400 == 0 ? sum += 31 + 29 + date : sum += 31 + 28 + date;
+			// case 4: sum += 31 + 
+			case 12: sum += 30;
+			case 11: sum += 31;
+			case 10: sum += 30;
+			case 9: sum += 31;
+			case 8: sum += 31;
+			case 7: sum += 30;
+			case 6: sum += 31;
+			case 5: sum += 30;
+			case 4: sum += 31;
+			case 3: sum += (year%4 == 0 && year%100 != 0 || year%400 == 0) ? 29 : 28;
+			case 2: sum += 31;
+			case 1: sum += date;
+		}
+		alert(sum);
+		
+
+		// //常规的 方法：
+		// var year = parseInt(prompt("请输入一个年份："));
+		// 	var month = parseInt(prompt("请输入一个月份："));
+		// 	var date1 = parseInt(prompt("请输入一个日期："));
+			
+		// 	var sum = 0;
+		// 	/*二月单独处理：赋值给days1；*/
+		// 	var days1=((year%4==0&&year%100!=0)||year%400==0)? 29 : 28 ;
+			
+		// 	switch(month){
+				
+		// 	case 1:sum=date1; break;
+		// 	case 2:sum=31+date1; break;
+		// 	case 3:sum=31+date1+days1; break;
+			
+		// 	case 4:sum=31+31+date1+days1; break;
+		// 	case 5:sum=31+31+30+date1+days1; break;
+		// 	case 6:sum=31+31+30+31+date1+days1; break;
+		// 	case 7:sum=31+31+30+31+30+date1+days1; break;
+		// 	case 8:sum=31+31+30+31+30+31+date1+days1; break;
+		// 	case 9:sum=31+31+30+31+30+31+31+date1+days1; break;
+		// 	case 10:sum=31+31+30+31+30+31+31+30+date1+days1; break;
+		// 	case 11:sum=31+31+30+31+30+31+31+30+31+date1+days1; break;
+		// 	case 12:sum=31+31+30+31+30+31+31+30+31+30+date1+days1; break;
+		
+		// 	}
+			
+		// 	document.write(year+'年的'+month+'月'+date1+'日'+'是这一年的第'+ sum+'天');
+
+
+		 */
+		
+	</script>
+</body>
+</html>

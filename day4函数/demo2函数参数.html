@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数参数</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 带参数的函数
+		// 实现两个数求和
+		/*
+			function 洗衣机(衣服1，衣服2，衣服3，洗衣服){
+				洗衣服1;
+				洗衣服2;
+				洗衣服3;
+				洗衣服4;
+			}
+		*/
+		/*
+			function sum() {
+				var num1 = 3;
+				var num2 = 4;
+				alert(num1 + num2);
+			}
+			sum();
+		*/
+		
+		/*
+			arguments: 数组, 存着外部传入的参数
+			arguments[0]: num1
+			arguments[1]: num2
+			arguments[2]: undefined
+		*/
+		
+		/*
+			function sum1(num1, num2) {//定义函数时所使用的参数：形式参数（形参）
+				// for(var i = 0; i < arguments.length; i++) {
+				// 	alert(arguments[i]);
+				// }
+				alert(num1+num2);//调用函数时所使用的参数：实际参数（实参）
+			}
+			sum1(4, 8);
+			sum1(4, 8, 12);//12自动丢失
+			sum1(4);//NaN 第二个参数以undefined
+		*/
+		
+		/*
+			参数注意：
+			1、当实参的个数大于形参的个数时，多余的实参会自动丢失
+			2、当实参个数小于实参个数时，多余的形参会以undefined补全
+			3、只能将实参传递给形参，所以叫单向传递
+
+			形参：要求只能是变量，不能写var
+			实参：可以是变量、常量、表达式
+		 */
+		/*
+			var a = 6, b = 4;
+			sum1(6, 4);
+			sum1(a, b);
+			sum1(a+2, b);
+			//实参可以是常量、变量、表达式
+		*/
+
+	</script>
+</body>
+</html>

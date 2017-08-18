@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>break和continue</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			break:
+			1、用在switch语句中，终止switch语句的执行
+			2、用在循环中，终止一层循环
+			continue:用在循环语句中，终止一次循环，提前进入下一次循环
+
+			for(var i=1; i<=6; i++) {
+				if(i == 3) {
+					// break;
+					continue;
+				} else {
+					document.write(i+" ");
+				}
+			}
+
+			// 利用循环输出1241342341234
+			for(var i=1; i<=4; i++) {
+				for(var j=1; j<=4; j++) {
+					if((i==1 && j==3) || (i==2 && j==2) || (i==3 && j==1)) {
+						continue;
+						// break;
+						// alert("continue之后");
+					} else {
+						document.write(j);
+					}
+				}
+			}
+			//1、如果已执行break语句，就不会执行循环体中位于break后的语句。
+			2、在多层循环中，一个break语句只向外跳一层。
+		*/
+	</script>
+</body>
+</html>

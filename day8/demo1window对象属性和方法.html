@@ -1,0 +1,98 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>window对象属性和方法</title>
+
+	<script type="text/javascript">
+		/*
+			ECMAScript
+			BOM : 整个浏览器, 浏览器对象
+			DOM : 整个文档对象
+		*/
+
+		//浏览器弹框
+		// alert("你好"); //弹出一个警告框, 参数是显示在警告框上的文本
+
+		// 弹出一个带两个按钮的提示框, 参数是显示在提示框上的文本信息
+		// confirm("请按确认或者取消");
+
+		// 上述提示框在点击按钮之后, 会产生返回值
+		/*
+			如果点击确定, 返回true
+			如果点击取消, 返回false
+		*/
+		// if (confirm("请选择确定或取消")) {
+		// 	document.write("点击了确定");
+		// } else {
+		// 	document.write("点击了取消");
+		// }
+
+
+
+		//弹出一个带输入框的提示框
+		/*
+			第一个参数: 提示框上显示的文本信息
+			第二个参数: 输入框的默认值
+			返回值:  点击确定,返回输入框的文本
+					点击取消, 返回值为null
+		*/
+		// var num = prompt("请输入一个数字", 0);
+		// alert(num);
+
+		//上述三个用户交互界面都是window的方法
+		// window.alert("ss");
+		// alert("sss");
+		
+
+		/*
+			open(): 可以导航到一个特定的URL, 新建一个新窗口
+		*/
+		// open("http://www.baidu.com"); //在空白页打开百度，默认_blank在空白页打开
+
+		// open("1_sub.html"); //在空白页打开自己指定的页面
+
+		// open("1_sub1.html", "_parent"); //如果是_parent: 则在本页面打开, 如果是_blank则是在新窗口中打开
+		// open("1_sub1.html", "_blank");
+		
+		//open("1_sub.html", "myHtml");//不命名会每次打开新窗口，命名的第一次打开新窗口,之后在这个窗口中加载。
+
+		//第3个参数:控制我新建窗口的属性, 窗口会弹出
+		//分别是: 窗口的宽高, 弹出的新窗口距离电脑屏幕的左边和上面的距离
+		// open("1_sub1.html"); //不指名title每次都重新打开一个
+		// open("1_sub1.html", "sub1", "width=300, height=200, top=100, left=300"); 
+		// open("1_sub.html", "myHtml", "width=300, height=300, top=300, left=300");//设置宽高top、left的时候要指定窗口的名称
+
+		//返回值: 返回子窗口(当前打开的窗口)的window
+		var subWindow = open("1_sub1.html", "sub1", "width=300, height=200, top=100, left=300");  
+		subWindow.alert("sss");
+
+		
+	   
+	</script>
+
+</head>
+<body>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

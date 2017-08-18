@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>逻辑运算符</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		逻辑运算符
+		 */
+		/*
+		!(非): 逻辑关系： 非真即假，非假即真(返回true  false)
+		 */
+		/*
+		alert(!false);//true
+		alert(!true);//false
+		alert(!0);//true
+		alert(!1);//false
+		alert(!2);//false  一切非零的数都为true
+		alert(!2>1);//false  !优先级比关系运算符高，先执行!  !2-->false-->0  
+		alert(!(2>1));//false  ()优先级最高
+		alert(!(2>10));//true
+		// 拓展：常见题目
+		// alert(!!10);//true
+		*/
+
+
+		/*
+		&&(与)：逻辑关系：两边都为真，结果为真，如果有一边为假，结果为假
+		 */
+		/*
+		var a = 5;
+		alert(a>3 && a<10);//true
+		alert(a>3 && a<4);//false
+		*/
+	
+
+		/*
+		||(或)：逻辑关系：两边都为假，结果为假，如果有一边为真，结果为真
+		 */
+		/*
+		var a = 5;
+		alert(a>3 || a<4);//true
+		alert(a>8 || a<4);//false
+		alert(a>8 || a<8);//true
+		*/
+	
+
+		// 拓展
+		/*
+		&&、||短路
+		 */
+		/*
+		var a = 5;
+		alert(a>4 && b>3);//报错
+		alert(a<4 && b>3);//false  &&前面为false，后面就不执行了
+		alert(a>6 || b>3);//报错
+		alert(a<6 || b>3);//true  ||前面为true，后面就不执行了
+		*/
+	
+		/*
+		练习题
+		 */
+		/*
+		1、判断下列表达式true、false
+		(100>3) && ("a">"c");//false  字母比较按照ascii码，都是小写时，后面的ascii码比前面大，都大写时也是，a是97，A是65
+		(100>3) || ("a">"c");//true
+		!(100<3);//true
+		*/
+	
+		/*
+		2、判断一个变量是否是空格、数字(0-9)、字母(a-z||A-Z)中的一种
+		var a = "3";
+		alert(a == " " || a>0 && a<9 || a>"a"&&a<"z" || a>"A"&&a<"Z");
+		 */
+		
+		/*
+		3、判断year表示的某一年是否是闰年，用逻辑表达式。
+		闰年的判断条件是符合下面二者之一
+		(1)能被4整除但不能被100整除
+		(2)能被400整除
+		var year = 2000;
+		alert((year%4 == 0 && year%100 != 0) || year%400 ==0);
+		 */
+	</script>
+</body>
+</html>

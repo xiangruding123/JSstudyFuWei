@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			//instanceof: 判断是否为该类型的数据
+			//1 instanceof number : 判断1是否是number
+			
+			//创建cookie
+			function setCookie(name, value, expires, path, domain, secure) {
+				var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+				if (expires instanceof Date) {
+					cookieText += "; expires=" + expires;
+				}
+				if (path) {
+					cookieText += "; path=" + path;
+				}
+				if (domain) {
+					cookieText += "; domain=" + domain;
+				}
+				if (secure) {
+					cookieText += "; secure";
+				}
+				document.cookie = cookieText;
+				return document.cookie;
+			}
+
+                
+                //几天后的日期   
+                function afterDate(num) {
+                    var oDate = new Date();
+                    oDate.setDate(oDate.getDate()+num);
+                    return oDate;
+                }
+
+
+			// 如果没有传null
+			// alert(setCookie("user", "superman", afterDate(1)));
+			// alert(setCookie("user", "超人", afterDate(2)));
+			// alert(setCookie("变种人", "金刚狼", afterDate(20)));
+			console.log(setCookie("超级赛亚人", "孙悟空", afterDate(200)));
+
+
+
+			
+
+
+			//获取cookie
+			// function getCookie(name){
+			// 	// userName=lisi; email=111@qq.com
+			// 	// document.cookie打印出的所有key=value组合
+			// 	var cookies = decodeURIComponent(document.cookie);
+			// 	//1, 先找到name在cookie中的起始位置
+			// 	var nameIndex = cookies.indexOf(name+"=");
+			// 	//计算出value值的起始位置
+			// 	var valueIndex = nameIndex + name.length + 1; 
+				
+
+
+			// 	//2, 如果能够找到
+			// 	if (nameIndex >= 0) {
+			// 		//得到name后的第一个分号;
+			// 		//indexOf第二个参数可选的整数参数。规定在字符串中开始检索的位置
+			// 		var nameEnd = cookies.indexOf(";", nameIndex);
+			// 		//如果name在cookie中是最后一个参数
+			// 		if (nameEnd == -1) {
+			// 			nameEnd = cookies.length;
+			// 		}
+			// 		return cookies.substring(valueIndex, nameEnd);
+			// 	}
+			// 	return "";
+			// }
+			// alert(getCookie("user"));
+
+
+
+
+			//删除cookie
+			// function removeCookie(name) {
+			// 	document.cookie = encodeURIComponent(name) + "=; expires=" + new Date(0);
+			// }
+			// removeCookie("user");
+			// alert(decodeURIComponent(document.cookie));
+      
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

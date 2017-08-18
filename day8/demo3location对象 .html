@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>location对象</title>
+		<script>
+		
+			/*
+				 location 对象
+			*/
+			
+			/*
+			    location是BOM对象之一，它提供了与当前窗口中加载的文档有关的信息,还提供了一些导航功能。
+			           事实上，location对象是window对象的属性，也是document对象的属性;
+			           所以window.location和document.location等效
+			*/
+			
+
+			// alert(window.location);
+			// alert(window.document.location)
+			// alert(document.location)
+			// alert(location);
+			/* 以上三种写法效果一致 window.location 和document.location等效 */
+			
+			
+			//location对象的属性
+			// alert(location.hash);//获取 #
+			// location.hash = "#40";//设置
+			// alert(location.hash); //锚点
+			
+
+			// alert(location.port);//获取，一般用来获取
+			// alert(location.port); //端口
+			
+
+			// alert(location.hostname); //主机名/IP/域名，一般用来获取
+			
+
+			// alert(location.pathname);//当前路径
+			// location.pathname = "http://www.baidu.com";//设置当前路径，一般用location.href
+			
+			
+			// location.protocal = "ftp";//设置有协议当前
+			// alert(location.protocal); //当前协议
+			
+			// location.search = "?id=6"; //设置?后面的字符串
+			// alert(location.search);  //获取?后面的字符串
+			
+			// alert(location.href); //当前url
+			// location.href = "https://www.baidu.com";//设置当前的url地址
+			
+			/*
+			通过下面的方法, 可以获取URL的参数: 
+			在url地址栏添加?username=zhangsan&password=123456
+			*/
+			
+
+			//???
+
+			// function arrayWithStr(str){
+			// 	str = str.substring(1);
+			// 	//&进行分割,将属性分割开
+			// 	var strArray = str.split("&");
+			// 	var newArray = [];
+			// 	for(var i = 0; i < strArray.length; i++){
+			// 		var tmpArray = strArray[i].split("=");
+			// 		newArray.push(tmpArray[1]);
+			// 	}
+			// 	alert(newArray);
+			// }
+			// arrayWithStr(location.search);
+			
+
+
+			//http://www.baidu.com#1 //锚点
+			//http://www.baidu.com:8080?username=zhangsan&password=123456
+			
+			// location.assign("http://www.baidu.com"); //直接跳转URL，与href相同
+			// 
+			
+
+			!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+			// 不会改变history记录
+			// location.reload();   //重新加载, 有可能缓存加载
+			// location.reload(true); //强制重新加载  不经过缓存,直接从服务器请求
+			// 
+			// 
+			// location.replace("http://www.baidu.com"); //替换网址, 可以替换跳转前页面的历史记录
+			// location.replace('http://www.baidu.com')//与前两者的区别是，在replace之后，浏览历史就被清空了（href与assign方法会产生历史记录）。
+			
+
+			
+		</script>
+	</head>
+
+	<body>
+		<!-- <button onclick="location.reload()">reload</button> -->
+		<a href="#div">aaa</a>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div id="div">bbb</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+		<div>aaa</div>
+	</body>
+
+</html>

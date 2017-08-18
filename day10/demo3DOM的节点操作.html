@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM节点操作</title>
+		
+		<script>
+			// document.write("aaa<br/>");
+			// document.write("bbb<br/>");
+			window.onload = function() {
+				// document.write("111<br/>");
+				// document.write("222<br/>");
+				//
+				//节点操作
+				//
+				
+
+				//write: 添加
+				//document.write写在事件中  等页面加载完后再触发  会覆写页面
+				//会清空body的内容
+				// document.write("<p>我是被添加的段落</p>");
+			
+
+
+			
+				//createElement(): 创建一个元素节点
+				//
+				//创建后放在内存中， 不会自动直接显示在body中
+				//
+				// var pNode = document.createElement("p"); 
+				// 
+				// var box = document.getElementById("box");
+				// 
+				// pNode.innerHTML = "<strong>我是内容<strong>";
+				
+				// box.appendChild(pNode);  //给box节点添加一个子节点pNode， pNode会在box子节点的末尾
+				
+
+
+
+
+				//createTextNode(): 创建一个文本节点
+				// var textNode = document.createTextNode("这是一个文本段落");
+				// pNode.appendChild(textNode);    //给p节点添加一个文本textNode
+				// box.appendChild(pNode);
+				
+
+
+
+
+				
+				/*
+				 封装一个函数,  带两个参数, （元素节点的名称, 该节点的文本内容）
+				 返回一个带文本内容的元素节点
+				 */
+				
+				//创建一个节点: <p>段落</p>
+				// var pNode = createNodeWithInfo("p", "段落1");
+				// box.appendChild(pNode);
+				
+
+
+				
+			    // 插入
+			    // insertBefore() 方法在您指定的已有子节点之前插入新的子节点。
+				//父节点.insertBefore(参数1, 参数2): 在参数2节点前插入参数1节点
+			
+
+				//insertAfter(,): 在节点后插入一个节点, js里面没有写，需要自己封装
+				// var pNode2 = createNodeWithInfo("p", "段落2");
+				// var parentNode = box.parentNode;//父节点
+				// alert(parentNode.tagName); //BODY节点
+				// parentNode.insertBefore(pNode2, box); //在box节点前插入节点pNode2节点
+				
+
+		   	    // var pNode3 = createNodeWithInfo("p", "段落3");
+		   	    // js没有提供给当前元素 的后面创建一个节点
+				// insertAfter(pNode3, box);
+				
+
+
+				//替换
+				//replaceChild(,)
+				var pNode = createNodeWithInfo("p", "我是替换文本, 替换了div");
+				var box = document.getElementById("box");
+				
+				//replaceChild(),第一个节点替换第二个节点
+				box.parentNode.replaceChild(pNode, box);
+				
+
+
+
+				//删除
+				// removeChild()
+				// box.parentNode.removeChild(box);
+				
+				
+				//克隆/复制
+				//cloneNode(): 返回克隆的节点
+				//参数: true:返回克隆的节点以及该节点的子节点, false:只复制节点标签包括属性(不填默认是false) 
+				// console.log(box.childNodes[3]);
+				// var cloneNode = box.childNodes[3].cloneNode(true);
+				// console.log(cloneNode);
+				// box.appendChild(cloneNode);
+				
+			}
+			
+
+
+			//创建一个带文本节点的元素节点
+			// function createNodeWithInfo(nodeName, nodeText){
+			// 	//1, 创建元素节点
+			// 	var eleNode = document.createElement(nodeName);
+			// 	//2, 创建文本节点
+			// 	var textNode = document.createTextNode(nodeText);
+			// 	//3, 添加子节点
+			// 	eleNode.appendChild(textNode);
+			// 	return eleNode;
+			// }
+			
+
+
+
+			// function createNodeWithInfo(nodeName, nodeHTML) {
+			// 	var eleNode = document.createElement(nodeName);
+			// 	eleNode.innerHTML = nodeHTML;
+			// 	return eleNode;
+			// }
+			
+
+
+
+
+
+
+
+			// function insertAfter(newNode, node){
+			// 	//1,node节点的父节点
+			// 	var parentNode = node.parentNode;
+			// 	
+			// 	//2,判断node节点是否是最后一个节点
+			// 	if (node == parentNode.lastChild) {
+			// 		//如果是最后一个节点, 则直接插入到末尾
+			// 		parentNode.appendChild(newNode);
+			// 	} else{
+			// 		//如果不是最后一个节点, 则找到其下一个节点, 插入到下一个节点之前即可
+			// 		parentNode.insertBefore(newNode, node.nextSibling);
+			// 	}
+			// }
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="box" title="标题" class="pox" style="color: red;">
+			111
+			<p>222</p>
+			<p>333</p>
+		</div>
+		<script>
+			// document.write("ccc<br/>");
+			// document.write("ddd<br/>");
+			// var box = document.getElementById("box");
+			// box.onclick = function() {
+			// 	document.write("333<br/>");
+			// 	document.write("444<br/>");
+			// }
+		</script>
+	</body>
+</html>

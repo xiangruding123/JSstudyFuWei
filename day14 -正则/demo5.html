@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			window.onload = function() {
+				var oBtn = document.getElementById("btn");
+				var oTxt = document.getElementById("txt");
+				var oTextarea = document.getElementById("textarea");
+				oBtn.onclick = function() {
+					var str = oTextarea.value;
+					var pattern = new RegExp(oTxt.value, "ig"); 
+					oTextarea.value = str.replace(pattern, "**");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt" />
+		<input type="button" id="btn" value="替换" />
+		<br /><br />
+		<textarea id="textarea" cols="50" rows="5"></textarea>
+	</body>
+</html>

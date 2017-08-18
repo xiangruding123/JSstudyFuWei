@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script>
+			
+			window.onload = function(){
+				
+				var addCars=document.getElementsByTagName("a");
+				
+				for(var i=0;i<addCars.length;i++){
+					
+					addCars[i].onclick=function(){
+						var name = this.parentNode.getElementsByTagName("span")[0].innerHTML;
+						var value = this.parentNode.getElementsByTagName("span")[1].innerHTML;
+						
+						setCookie(name,value);
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<ul>
+			<li><span>好吃的1</span> <span>$1234</span> <a href="#">添加购物车</a> </li>
+			<li><span>好吃的2</span> <span>$2344</span> <a href="#">添加购物车</a> </li>
+			<li><span>好吃的3</span> <span>$156734</span> <a href="#">添加购物车</a> </li>
+			<li><span>好吃的4</span> <span>$9834</span> <a href="#">添加购物车</a> </li>
+			<li><span>好吃的5</span> <span>$12334</span> <a href="#">添加购物车</a> </li>
+			<li><span>好吃的6</span> <span>$771234</span> <a href="#">添加购物车</a> </li>
+		</ul>
+		<a href="list.html">查看购物车</a>
+	</body>
+</html>

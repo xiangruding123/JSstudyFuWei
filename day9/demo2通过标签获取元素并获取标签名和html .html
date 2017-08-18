@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>通过标签获取元素并获取标签名和html</title>
+		<script>
+			
+			window.onload = function() {
+				
+				/*
+				 *  通过id获取到节点对象
+				 *  document.getElementById("box_id");
+				 */
+				
+				/* 
+				 * 通过元素名称TagName获取节点对象
+				 * document.getElementsByTagName("li");
+				 */
+				
+				//[object HTMLCollection] 节点列表数组
+				var nameList = document.getElementsByTagName("li");
+				
+				console.log(document.getElementsByTagName("li")[1]);   //<li>2</li>
+				console.log(document.getElementsByTagName("li").length); //3
+				console.log(nameList.length);  //3
+				console.log(nameList[0]); //[object HTMLLIElement] //li元素节点 //<li>1</li>
+				
+
+
+				
+				//获取元素节点的标签名tagName 和 innerHTML
+				// console.log(nameList[0].tagName);
+				// console.log(nameList[0].innerHTML);
+				
+				//两种写法效果一致
+				// console.log(nameList[0]); 
+				// console.log(nameList.item(0));				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<div name="box_id">测试Div</div>
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+

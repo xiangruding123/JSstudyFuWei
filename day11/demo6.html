@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>组合键和事件冒泡</title>
+		<script>
+			
+			//修改键
+			//ctrl alt shift
+			
+			window.onload = function() {
+				document.onclick = function(evt){
+					var e = evt || window.event;
+					console.log(e.ctrlKey)
+				}
+				
+				function getKeys(evt){
+					var key = '';
+					if(evt.ctrlKey) {
+						key = "ctrl";
+					}
+					if(evt.altKey) {
+						key = "alt";
+					}
+					if(evt.shiftKey){
+						key = "shift";
+					}
+					return key;
+				}
+				
+				
+				//键码
+				/* 所有按键, 包括功能键(ctrl, alt,shift, tab, 方向键等), (不包括亮度,音量..的按键)
+		 在发生 keydown 和 keyup 事件时，event 对象的 keyCode 属性中会包含一个代码，
+		 与键盘上一个特定的键对应。对数字字母字符集，keyCode 属性的值与 ASCII 码中
+		 对应大写字母 或数字的编码相同。字母中大小写不影响。
+				 */
+				document.onkeydown = function(evt) {
+					var e = evt || window.event;
+					console.log(e.keyCode); //a: 65, 左上右下:37,38,39,40
+				}
+				document.onkeydown = function(evt) {
+					var e = evt || window.event;
+					console.log(e.keyCode);
+				}
+				
+				//字符码
+				/*
+				 * 键盘上的数字, 字母(区分大小写), 空格, 回车
+				 Firefox、Chrome 和 Safari 的 event 对象都支持一个 charCode 属性，
+				 这个属性只有在发 生 keypress 事件时才包含值，而且这个值是按下的那个键所代表字符的 ASCII 编码。
+				 此时 的 keyCode 通常等于 0 或者也可能等于所按键的编码
+				 */
+				// document.onkeypress = function(evt) {
+				// 	var e = evt || window.event;
+				// 	//将ASCII码转换成字符
+				// 	var c = String.fromCharCode(e.charCode);
+				// 	console.log(e.charCode + c);
+				// }
+				// document.onkeypress = function(evt) {
+				// 	var e = evt || window.event;
+				// 	console.log(e.charCode);
+				// }
+
+				
+				//target: 目标对象,存放绑定事件的对象 
+				document.onclick = function(evt){
+					var e = evt || window.event;
+					console.log(e.target) //html节点对象
+				}
+				
+				var oDiv = document.getElementById("box");
+				oDiv.onclick = function(evt){
+					var e = evt || window.event;
+					console.log(e.target);    //div节点对象
+				}
+				
+				var oInput = document.getElementById("input_index");
+				oInput.onclick = function(evt){
+					var e = evt || window.event;
+					console.log(e.target);    //input节点对象
+				}
+				
+				
+
+
+
+
+
+
+
+				
+				/*
+	            冒泡
+	                1 一定是具有相同的事件
+	                2 一定是有层级关系
+	                3 默认冒泡，从小到大依次触发事件
+	             */
+				// document.onclick = function() {
+				// 	alert("您的泡泡出了水面");
+				// }
+				// document.documentElement.onclick = function(){
+				// 	alert("您的泡泡潜伏在水下10cm处");
+				// }
+				// document.body.onclick = function() {
+				// 	alert("您的泡泡潜伏在水下20cm处");
+				// }
+				// document.getElementById("box").onclick = function() {
+				// 	alert("您的泡泡潜伏在水下30cm处");
+				// }
+				// document.getElementById("input_box").onclick = function(evt){
+				// 	alert("您放了一个泡泡");
+					
+				// 	var e = evt || window.event;
+				// // 	//可以通过下述方式取消事件冒泡
+				// // 	e.cancelBubble = true;//ie
+				// // 	e.stopPropagation();//非ie
+				// // 	window.event? e.cancelBubble=true : e.stopPropagation();
+				// }
+				
+				//事件的冒泡
+				//浏览器默认的事件传递: 冒泡模式传递
+				//一般冒泡我们需要阻止
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box" style="width: 300px; height: 300px; background-color: red;">
+			<input id="input_box" type="button" value="按钮"/>
+		</div>
+		
+		<input id="input_index" type="button" value="按钮" />
+	</body>
+</html>

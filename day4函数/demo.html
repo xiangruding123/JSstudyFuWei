@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day04</title>
+</head>
+<body>
+	<!-- <input type = "button" value = "打印how are you" onclick="print_how()"> -->
+	<script type="text/javascript">
+		//alert() document.write() console.log() prompt() parseInt() parseFloat() isNaN()
+		//对象.方法  对象.属性  人.身高  人.体重  人.吃饭()  人.睡觉()
+		/*
+			反复输出hello world
+			1、先输出两个个how are you
+			2、再输出三个hello world
+			3、再输出两个how are you
+			4、再输出三个hello world
+			封装成一个函数(实现输出hello world这个功能)
+			封装{} 起个名 函数标志性的() 关键字function
+		*/
+		/*
+			函数
+			语法：
+
+			function 函数名() {
+				//函数体（函数要干的事情）
+			}
+		 */
+		/*
+			function print() {//函数头
+				// 函数体
+				for(var i=1; i<=3; i++) {
+					document.write("hello world<br/>");
+				}
+			}
+			function print_how() {//函数头
+				// 函数体
+				for(var i=1; i<=2; i++) {
+					document.write("how are you<br/>");
+				}
+			}
+			print_how();
+			print();//调用函数的方式：函数名()
+			print_how();
+			print();
+		*/
+		/*
+			function 函数名(){
+				//函数体
+			}
+		*/
+		//函数名:用户自定义的名字
+		//1.函数名必须体现,函数的功能
+		//2.函数名首字母小写,第二个单词开始,首字母大写(驼峰)
+		//3.函数名中的单词可以简写,但是简写的单词必须是易懂的
+		
+		
+		/*
+			// 语句定义法
+			function 函数名(){
+				//函数体
+			}
+			// 放在前后调用都可以执行
+			print_how();
+			function print_how() {//函数头
+				// 函数体
+				alert("how are you");
+			}
+			print_how();
+			// 表达式定义法: 只能先定义函数，再去调用函数，不会影响按钮的调用
+			var 函数名 = function() {
+				//函数体
+			}
+			// 必须先声明，后调用
+			print_how();//报错，未定义
+			var print_how = function() {
+				alert("how are you");
+			}
+			print_how();
+			typeof 函数名;//"function"
+		*/
+	
+		// typeof 函数名  function类型	
+		// console.log(typeof print);
+		
+	
+		// 带参数的函数
+		// 实现两个数求和
+		/*
+			function 洗衣机(衣服1，衣服2，衣服3...){
+				洗衣服1;
+				洗衣服2;
+				洗衣服3;
+				洗衣服4;
+				返回干净的衣服;
+			}
+		*/
+		/*
+			function sum(num1, num2) {
+				alert(num1 + num2);
+			}
+			sum();
+		*/
+		
+		/*
+			arguments: 数组, 存着外部传入的参数
+			arguments[0]: num1
+			arguments[1]: num2
+			arguments[2]: undefined
+		*/
+		
+		/*
+			function sum1(num1, num2) {//定义函数时所使用的参数：形式参数（形参）
+				// for(var i = 0; i < arguments.length; i++) {
+				// 	alert(arguments[i]);
+				// }
+				alert(num1+num2);//调用函数时所使用的参数：实际参数（实参）
+			}
+			sum1(4, 8);
+			sum1(4, 8, 12);//12自动丢失
+			sum1(4);//NaN 第二个参数以undefined
+
+			var sum1=0;
+			function sum() {
+				// 0 9 ++
+				for(var i=0; i<=9; i++) {
+					sum1 += arguments[i];
+				}
+				alert(sum1);
+			}
+			sum(1,2,3,4,5,6,7,8,9,10);
+		*/
+		
+		/*
+			参数注意：
+			1、当实参的个数大于形参的个数时，多余的实参会自动丢失
+			2、当实参个数小于形参个数时，多余的形参会以undefined补全
+			3、只能将实参传递给形参，所以叫单向传递
+
+			形参：要求只能是变量，不能写var
+			实参：可以是变量、常量、表达式
+		 */
+		/*
+			var a = 6, b = 4;
+			sum1(6, 4);
+			sum1(a, b);
+			sum1(a+2, b);
+			//实参可以是常量、变量、表达式
+		*/
+	
+		/*
+			return 跳出hs
+			例：买红牛
+		 */
+		/*
+			function sum(num1, num2) {
+				// alert(num1, num2);
+				return num1+num2;//谁调用这个功能代码块，结果就返回给谁
+			}
+			// 注意：调用一个带有返回值函数时，一定要注意处理返回的结果，如果不处理，结果就丢了
+			var h = sum(2, 3);
+			alert(h);
+		*/
+	
+		//js中函数有两种
+		//内置函数  alert()
+		//自定义函数
+	
+		/*
+			作用域(堆栈)
+			函数内部定义的变量，局部变量，作用域仅在函数内部
+			函数参数也是函数局部变量
+		*/
+
+		/*
+		    var quanJu = "全局";//全局变量
+		    niMing = "匿名";//没用var声明的变量，作用域是全局
+			function m1(num1, num2){//局部变量
+			    var b = 5;//局部变量
+	    	    alert(b);//5
+	    	    alert(num1);
+	    		alert(quanJu);
+	    		alert(niMing);
+		    }
+		    m1(1, 2);
+		    alert(num1);//局部变量不能在外部引用
+			alert(b);
+			alert(quanJu);
+			alert(niMing);
+		*/
+
+
+		// var a = function() {
+		// 	aa = '123';
+		// }
+		// //a();//如果不调用，aa不能被赋值
+		// console.log(aa);//aa是隐式声明的变量，作用域是全局
+		
+
+		// 形参和实参同名
+		// 局部变量，函数一执行完就销毁
+		/*
+			var a = 10;//全局
+		    function m1(a){
+		       var a = 10;
+		       alert(a)
+			   a = 5;//局部
+	    	   alert(a);//5
+		    }
+			m1(a);
+		    alert(a); //10全局
+    	*/
+
+    	// 事件驱动
+
+    	// 递归：函数调用函数自身
+    	// 传递，回归
+    	/* 
+    	function print() {
+    		document.write("我就是在print函数里面调用的呀");
+    	}
+    	*/
+    	/*
+    	function print1(){
+    		document.write("hello1<br/>");
+    		//print3();
+    		print1();//递归  死循环
+    	}
+    	function print2(){
+    		document.write("hello2<br/>");
+    	}
+    	function print3(){
+    		document.write("hello3<br/>");
+    	}
+    	print1();
+		*/
+	
+		/*
+		// 100! = 100*99*98*97*96...*3*2*1;
+		100! = 100 * 99!;
+		99! = 99 * 98!;
+		98! = 98 * 97!;
+		...
+		3! = 3 * 2！
+		2！= 2 * 1！
+		1！= 1
+		F(x) = x * F(x-1);	
+		*/
+		/*
+			function jieCheng(x) {
+				if(x == 1) {
+					return 1;
+				}
+				return x * jieCheng(x-1);
+			}
+			return 5*return 4*return 3*return 2*jieCheng(1)
+			alert(jieCheng(5));
+		*/
+	
+		// 斐波那契数列
+		// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233，377，610，987，1597，2584，4181，6765，10946，17711，28657，46368。
+		//f(n)=f(n-1)+f(n-2) n=1 f(1)=1 n=2 f(2)=1
+		/*
+		function fbnq(n) {
+			if(n==1 || n==2) {
+				return 1;
+			}
+			return fbnq(n-1)+fbnq(n-2);
+		}
+		alert(fbnq(10));
+		*/
+	</script>
+</body>
+</html>

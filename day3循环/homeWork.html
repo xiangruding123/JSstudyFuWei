@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document--homework</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// 2.打印100-200之间所有能被3或者7整除的数
+		//100 200 ++
+		// for(var i=100; i<=200; i++) {
+		// 	if(i%3 == 0 || i%7==0) {
+		// 		document.write(i+"<br/>");
+		// 	}
+		// }
+
+		// 3.判断一个数是不是素数。(除了1和它本身以外不再有其他的除数整除。)
+		//2 n-1 ++
+		/*
+		var n = parseInt(prompt("请输入一个整数n："));
+		for(var i=2; i<=n-1; i++) {
+			if(n%i == 0) {
+				document.write("不是一个素数"+i);
+				break;
+			}
+			if(i==n-1) {
+				document.write("是一个素数");
+			}
+		}
+		*/
+		
+		// 4.输入两个数，求两个数的最大公约数
+		// 找出这两数中的最小数(从大往小找)
+		// min 1 --
+		// var num1 = parseInt(prompt("请输入第一个数："));
+		// var num2 = parseInt(prompt("请输入第二个数："));
+		// var min = num1>num2? num2 : num1;
+		// for(var i=min; i>=1; i--) {
+		// 	if(num1%i == 0 && num2%i ==0) {
+		// 		document.write("最大公约数是："+i);
+		// 		break;//找着了就跳出循环
+		// 	}
+		// }
+		
+		// 5.求s=a+aa+aaa+aaaa+….+aa...a的值，其中a是一个数字。例如2+22+222+2222
+		// 最后输出2+22+222+2222+22222=24690
+		// var a = 2;
+		// var n = parseInt(prompt("请输入一个循环次数的数字："));
+		// var sum = 0;
+		// var tmp = 0;//中间量 2 22  222
+		// for(var i = 1; i <= n; i++) {
+		// 	tmp = a + tmp*10;
+		// 	if(i != n) {
+		// 		document.write(tmp+"+");
+		// 	} else {
+		// 		document.write(tmp);
+		// 	}
+		// 	sum += tmp;
+		// }
+		// document.write("="+sum)
+
+		//6.五位数中，对称的数称为回文数，找出所有的回文数。如12321（***）
+		//10000 99999 ++
+		//12345
+		// for(var i=10000; i<=99999; i++) {
+		// 	var w = parseInt(i/10000);
+		// 	var q = parseInt(i%10000/1000);
+		// 	var s = parseInt((i%100)/10);
+		// 	var g = i%10;
+		// 	if(w == g && q == s) {
+		// 		document.write(i+"<br/>");
+		// 	}
+		// }
+		
+		/*
+			for(var i=1;i<=9;i++){
+			for(var j=0;j<=9;j++)
+			{
+				for(var k=0;k<=9;k++){
+					document.write(""+i+j+k+j+i+"<br/>")
+					}
+				}
+				
+			}
+		*/
+		
+		
+		
+	</script>
+</body>
+</html>

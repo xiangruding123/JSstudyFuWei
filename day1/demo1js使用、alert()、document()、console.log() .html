@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>js使用、alert()、document()、console.log()</title>
+		<!-- <script type="text/javascript">
+			/*
+				内部js
+			*/
+			alert("内部js");
+		</script> -->
+
+		<!--外部js, 可以出现写在html文件任何地方， 可以出现多个-->
+		<!-- <script type="text/javascript" src="demo.js">
+			alert("外部引入script标签内部");//一旦外部引入，就不要在script元素里写代码了，不起作用
+		</script> -->
+
+		<script type="text/javascript">
+			/*
+				 alert()以弹框的形式输出(js)  缺点：阻塞后面代码
+				 document.write()在html页面中（文档区域）输出(可操作html标签)  缺点：改变文档内容
+				 console.log()在控制台输出
+				 作用：对书写的程序进行调试
+			*/
+			/*
+			alert("欢迎学习javascript");
+			document.write("hello, world!");
+			console.log("要学会控制台打印");//按f12出现控制台
+
+			document.write("hello <br/> world");//document换行<br/>
+			alert("欢迎学习\njavascript");//\n转义字符，表示换行
+
+			document.write("&lt;br&gt;")//原样输出标签内容
+			*/
+		</script>
+	</head>
+	<body>
+		<!--行内js-->
+		<!-- <input type="button" value="按钮" onclick="alert('行内js')"/> -->
+	</body>
+</html>

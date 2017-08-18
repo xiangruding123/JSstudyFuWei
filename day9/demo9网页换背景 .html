@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>网页换背景</title>
+
+</head>
+<body>
+    <button id="btn1">背景1</button>
+    <button id="btn2">背景2</button>
+    <button id="btn3">背景3</button>
+    <button id="btn4">背景4</button>
+    <button id="btn5">背景5</button>
+
+    <script>
+
+
+        var imageArr = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
+        document.body.style.backgroundImage = "url("+imageArr[0]+")";
+        
+        var btnArr = document.getElementsByTagName("button");
+        
+
+        for(var i=0;i<=btnArr.length-1;i++){
+            //这种写法错误   因为function是在点击的时候触发i已经找不到 
+            // btnArr[i].onclick = function(){
+            //     document.body.style.backgroundImage = "url("+imageArr[i]+")";
+            // }
+            
+
+            btnArr[i].index = i;
+            console.log(btnArr[i].index);
+            btnArr[i].onclick = function(){
+                // this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。 
+                document.body.style.backgroundImage = "url("+imageArr[this.index]+")";
+            }
+        }
+
+
+       // var btn1 = document.getElementById("btn1");
+       // var btn2 = document.getElementById("btn2");
+       // var btn3 = document.getElementById("btn3");
+       // var btn4 = document.getElementById("btn4");
+       // var btn5 = document.getElementById("btn5");
+
+       // btn1.onclick = function(){
+       //     document.body.style.backgroundImage = "url("+imageArr[0]+")";
+       // }
+       // btn2.onclick = function(){
+       //     document.body.style.backgroundImage = "url("+imageArr[1]+")";
+       // }
+       // btn3.onclick = function(){
+       //     document.body.style.backgroundImage = "url("+imageArr[2]+")";
+       // }
+       // btn4.onclick = function(){
+       //     document.body.style.backgroundImage = "url("+imageArr[3]+")";
+       // }
+       // btn5.onclick = function(){
+       //     document.body.style.backgroundImage = "url("+imageArr[4]+")";
+       // }
+
+
+    </script>
+</body>
+</html>

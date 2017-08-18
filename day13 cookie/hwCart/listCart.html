@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function () {
+				
+				var cookies = decodeURIComponent(document.cookie);
+				
+				var ul = document.getElementById("ul");
+				
+				if (cookies) {
+					var arr = cookies.split("; ");
+					
+					for(var i=0; i<arr.length; i++) {
+						
+						var arr1 = arr[i].split("=");
+						
+						var li = document.createElement('li');
+						
+						li.innerHTML = arr1[0]+' '+arr1[1];
+						
+						ul.appendChild(li);
+						
+		             //document.write(arr1[0]+' '+arr1[1]+"<br/>");
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<ul id="ul">
+			
+		</ul>
+	</body>
+</html>

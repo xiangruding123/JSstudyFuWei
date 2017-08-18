@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>算数运算符</title>
+		<script type="text/javascript">
+			// 算数运算符规则，一切正常的数字都正常计算，其他类型时，先转为数字，再进行计算
+			/*
+			//乘法 *
+			alert(3*2);//6
+			alert(3*'3');//9  数字与字符串相乘，先将字符串自动转换成数字，再去计算结果
+			alert(3*'hello');//NaN: Not a Number 将有效数字字符串转为数字，非有效数字字符串在转成数字时，会转成NaN，一个数字乘以一个非数字时，结果是NaN
+			alert(3*undefined);//NaN
+			alert(3*true);//true运算时，会转成数字1计算，false会转成数字0计算
+			alert(3*false);//0
+			alert(3*null);//null在参与运算时，会转成数字0计算
+			*/
+		
+			/*
+			除法 /：先把运算符两边都转为数字再进行计算，不能转为数字的计算结果为NaN
+			 */
+			// alert(3/2);//1.5
+			// alert(3/'2');//1.5
+			// alert(3/false);//Infinity
+			// alert(3/0);//Infinity  分子非0   分母是0  Infinity，分子分母都是0  NaN
+			// alert(3/null);//Infinity
+			// alert(3/true);//3
+			// alert(3/'true')//NaN  字符串true被当成字符串解析
+			// alert(0/3);//0
+			// alert(0/0);//NaN
+			
+			/*
+			取余 %
+			 */
+			/*
+			alert(5%2);//1
+			alert(5%2.2);//不准确，求余运算尽量都是整数
+			alert(2%5);//被除数小于除数，结果都是被除数
+			*/
+		
+			/*
+			加法 +
+			规则一：(连接符)加号+两边有一个字符串，加号的作用是连接加号两边的数据，产生一个新的字符串
+			 */
+			/*
+			alert(3+3);
+			alert(3+"3");//'33'
+			alert("3"+3+3);//'333'从左向右计算
+			alert(3+NaN);//NaN
+			alert(3+null);//3
+			alert(3+undefined);//NaN
+			alert(3+true);//4
+			alert(3+false);//3
+			*/
+		
+			/*
+			减法 - ：
+			 */
+			/*
+			alert(3-2);//1
+			alert(3-"2");//1
+			alert(3-undefined);//NaN
+			*/
+		
+			/*
+			递增 ++：每运行一次++，那所对应的变量+1，结合变量使用
+			递减 --：每运行一次--，所对应的变量-1
+			num++：后缀自增
+			++num：前缀自增
+			 */
+			/*
+			var num = 3;
+			num++;
+			alert(num);//4
+			++num;
+			alert(num);
+			alert(num++);
+			alert(++num);
+			*/
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
